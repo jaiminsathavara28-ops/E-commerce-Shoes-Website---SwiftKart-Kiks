@@ -1,0 +1,201 @@
+/* ================= GLOBAL ================= */
+body {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background: #f1f5f9;
+}
+
+/* ================= NAVBAR ================= */
+.main-header, .navbar {
+    background: linear-gradient(135deg, #0f172a, #1e293b) !important;
+    color: #fff;
+    border: none;
+}
+
+/* ================= SIDEBAR ================= */
+.main-sidebar {
+    background: linear-gradient(180deg, #020617, #0f172a) !important;
+}
+
+/* Sidebar links */
+.nav-sidebar .nav-link {
+    color: #cbd5e1 !important;
+    border-radius: 10px;
+    margin: 6px 10px;
+    padding: 10px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+/* Hover */
+.nav-sidebar .nav-link:hover {
+    background: rgba(255,255,255,0.08);
+    transform: translateX(6px);
+}
+
+/* Active */
+.nav-sidebar .nav-link.active {
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    color: #fff !important;
+    font-weight: 600;
+}
+
+/* ================= CARDS ================= */
+.card {
+    border-radius: 16px !important;
+    border: none !important;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* ================= TABLE ================= */
+.table {
+    border-radius: 14px;
+    overflow: hidden;
+    background: white;
+}
+
+/* Header */
+.table thead th {
+    background: linear-gradient(135deg, #1e293b, #334155);
+    color: white;
+    font-size: 13px;
+    text-transform: uppercase;
+    border: none;
+}
+
+/* Rows */
+.table tbody tr {
+    transition: 0.25s ease;
+}
+
+.table tbody tr:hover {
+    background: #f8fafc;
+    transform: scale(1.01);
+}
+
+/* Cells */
+.table td {
+    padding: 14px;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+/* ================= BUTTONS ================= */
+.btn {
+    border-radius: 10px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    border: none;
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #16a34a, #22c55e);
+    border: none;
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #dc2626, #ef4444);
+    border: none;
+}
+
+/* Hover buttons */
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* ================= FORM ================= */
+.form-control {
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+}
+
+.form-control:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37,99,235,0.2);
+}
+
+/* ================= BADGES ================= */
+.badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.badge-success {
+    background: #22c55e !important;
+}
+
+.badge-warning {
+    background: #f59e0b !important;
+    color: black;
+}
+
+/* ================= LOGIN PAGE ================= */
+.login-page {
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+}
+
+.login-box {
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+/* ================= SCROLLBAR ================= */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2563eb;
+    border-radius: 10px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+
+    /* Sidebar collapse */
+    .main-sidebar {
+        width: 70px !important;
+    }
+
+    /* Hide text keep icons */
+    .nav-sidebar .nav-link p {
+        display: none;
+    }
+
+    /* Table responsive */
+    .table thead {
+        display: none;
+    }
+
+    .table, .table tbody, .table tr, .table td {
+        display: block;
+        width: 100%;
+    }
+
+    .table tr {
+        margin-bottom: 15px;
+        border-radius: 12px;
+        background: white;
+        padding: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    .table td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        border: none;
+        font-size: 13px;
+    }
+
+    .table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #64748b;
+    }
+}

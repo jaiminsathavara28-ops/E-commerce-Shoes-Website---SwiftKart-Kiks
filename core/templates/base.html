@@ -1,0 +1,524 @@
+<!DOCTYPE HTML>
+<html lang="en">
+{% load static %}
+{% load cart_tags %}
+<style>
+    .sigma_footer-logo img {
+    height: 120px;
+    width: auto;
+}
+</style>
+<!-- Mirrored from metropolitanhost.com/themes/templatemoster/html/shoez/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 23 Jan 2026 05:52:34 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>
+        {% block title %}
+        Home 1
+        {% endblock %}</title>
+    <style>
+        .header-controls-item {
+       margin: 0 10px !important;
+   }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Description website">
+    <meta name="author" content="Maksym Blank">
+    <meta name="keywords" content="website, with, meta, tags">
+    <meta name="robots" content="noindex, follow">
+    <meta name="revisit-after" content="5 month">
+    <meta name="image" content="../../../../../mywebsite.com/image.html">
+    <meta name="og:title" content="Title website">
+    <meta name="og:description" content="Description website">
+    <meta name="og:image" content="../../../../../mywebsite.com/image.html">
+    <meta name="og:site_name" content="My Website">
+    <meta name="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Title website">
+    <meta name="twitter:description" content="Description website">
+    <link href="{% static 'assets/css/plugins/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/plugins/slick.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/plugins/ion.rangeSlider.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/plugins/magnific-popup.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/fonts/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/fonts/flaticon/flaticon.css' %}" rel="stylesheet">
+</head>
+
+<body class="btn-style-1 btn-square sidebar-style-10">
+{% if messages %}
+<div style="position: fixed; top: 0; width: 100%; z-index: 9999;">
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show text-center" role="alert">
+        {{ message }}
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+
+<!--header Start-->
+<div id="section-header">
+    <aside class="sigma_aside">
+        <div class="sigma_close aside-trigger">
+            <span></span>
+            <span></span>
+        </div>
+        <div class="sigma_logo-wrapper">
+            <a class="sigma_logo" href="/">
+                <img src="{% static 'assets/img/logo.png' %}" alt="logo">
+            </a>
+        </div>
+        <ul class="navbar-nav">
+            <li class="menu-item menu-item-has-children">
+                <a href="/">Home</a>
+
+            </li>
+            <li class="menu-item">
+                <a href="/about-us/">About</a>
+            </li>
+            <li class="menu-item menu-item-has-children">
+                <a href="#">Pages</a>
+                <ul class="sub-menu">
+                    <li class="menu-item">
+                        <a href="/contact-us/">Contact us</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/login/">Login</a>
+                    </li>
+                    <!--                    <li class="menu-item">-->
+                    <!--                        <a href="signup.html">Signup</a>-->
+                    <!--                    </li>-->
+                </ul>
+            </li>
+            <li class="menu-item ">
+                <a href="/shop/">Shop</a>
+                <ul class="sub-menu">
+
+                    <li class="menu-item">
+                        <a href="/checkout/">Checkout</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/wishlist/">Wishlist</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/cart/">Cart</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="menu-item menu-item-has-children">
+                <a href="/blog/">Blog</a>
+                <ul class="sub-menu">
+                    <li class="menu-item">
+                        <a href="/blog/">Blog</a>
+                    </li>
+                    <!--                    <li class="menu-item">-->
+                    <!--                        <a href="/blog-details/">Blog details</a>-->
+                    <!--                    </li>-->
+                </ul>
+            </li>
+            <li class="menu-item">
+                <a href="/contact-us/">Contact us</a>
+            </li>
+        </ul>
+    </aside>
+    <div class="sigma_aside-overlay aside-trigger">
+    </div>
+    <header class="sigma_header style-7 can-sticky">
+        <div class="sigma_header-top d-none d-md-block">
+            <div class="container">
+                <div class="sigma_header-top-inner">
+                    <div class="sigma_header-top-links">
+                        <ul class="sigma_header-top-nav">
+
+                            <li>
+                                <a href="#">
+                                    <i class="fal fa-envelope"></i>
+                                    info@example.com
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sigma_header-top-contacts d-flex">
+                        <ul class="sigma_header-top-nav">
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fab fa-google"></i></a>
+                            </li>
+                        </ul>
+                        <a href="/contact-us/" class="sigma_btn secondary ml-5">Get a quote</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sigma_header-middle">
+            <div class="container">
+                <div class="navbar">
+                    <div class="sigma_logo-wrapper">
+                        <a class="sigma_logo" href="/">
+                            <img src="{% static 'assets/img/logo.png' %}" alt="logo">
+                        </a>
+                    </div>
+                    <ul class="navbar-nav">
+                        <li class="menu-item ">
+                            <a href="/">Home</a>
+
+                        </li>
+                        <li class="menu-item">
+                            <a href="/about-us/">About</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/contact-us/">Contact us</a>
+                        </li>
+                        <li class="menu-item menu-item-has-children">
+                            <a href="/shop/">Shop</a>
+                            <ul class="sub-menu">
+
+                                <li class="menu-item">
+                                    <a href="/checkout/">Checkout</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="/wishlist/">Wishlist</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="menu-item menu-item">
+                            <a href="/blog/">Blog</a>
+                            <!--                            <ul class="sub-menu">-->
+                            <!--                                <li class="menu-item">-->
+                            <!--                                    <a href="/blog-details/">Blog details</a>-->
+                            <!--                                </li>-->
+                            <!--                            </ul>-->
+                        </li>
+
+
+                    </ul>
+
+
+                    <ul class="header-controls-inner d-flex align-items-center justify-content-end">
+
+                        {% if user.is_authenticated %}
+
+                        <li class="header-controls-item">
+                            <a href="#" class="sigma_header-control" data-toggle="dropdown">
+                                <i class="far fa-user"></i>
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <h6 class="dropdown-header text-center">
+                                    Hello, {{ request.user.username }}
+                                </h6>
+
+                                <a class="dropdown-item" href="{% url 'account_dashboard' %}">
+                                    My Account
+                                </a>
+                                <a class="dropdown-item" href="{% url 'my_orders' %}">
+                                    My Orders
+                                </a>
+
+                                <div class="dropdown-divider"></div>
+
+                                <a class="dropdown-item text-danger" href="{% url 'signout' %}">
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+
+                        {% else %}
+                        <li class="header-controls-item d-none d-sm-block">
+                            <a href="{% url 'signin' %}">
+                                Login
+                            </a>
+                        </li>
+                        {% endif %}
+
+                        <li class="search-trigger header-controls-item d-none d-sm-block">
+                            <a class="sigma_header-control-search" title="Search" href="#">
+                                <i class="far fa-search"></i>
+                            </a>
+                        </li>
+                        <li class="cart-trigger header-controls-item d-none d-sm-block">
+                            <a class="sigma_header-control-cart" title="Your Cart" href="/cart/">
+                                <i class="far fa-shopping-basket"></i>
+                                <span>{% get_cart_count %}</span>
+                            </a>
+                        </li>
+                        <li class="aside-toggle aside-trigger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    {% block content %}
+
+    {% endblock %}
+    <!--footer Start-->
+    <div id="section-footer">
+        <footer class="sigma_footer sigma_footer-dark style-4 pb-0">
+            <div class="container">
+                <div class="sigma_footer-top">
+                    <div class="sigma_footer-logo">
+                        <img src="{% static 'assets/img/logo1.png' %}" alt="logo">
+                    </div>
+                    <div class="footer-item">
+                        <ul class="sigma_footer-links m-0">
+                            <li>
+                                <a href="/">Home</a>
+                            </li>
+                            <li>
+                                <a href="/about-us/">About</a>
+                            </li>
+                            <li>
+                                <a href="/blog/">Blog</a>
+                            </li>
+                            <li>
+                                <a href="/contact-us/">Contacts</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-item">
+                        <ul class="sigma_social-icons">
+                            <li>
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="sigma_footer-bottom mt-0 d-block d-sm-flex align-items-center justify-content-between">
+                    <div class="sigma_footer-copyright mt-0">
+                        <p class="mb-0">&copy; SwiftKart Kiks -
+                            <a href="#">2026</a>
+                            Made With Love
+                        </p>
+                    </div>
+                    <div class="payment-cards mt-3 mt-sm-0">
+                        <img src="{% static 'assets/img/payment-cards.png' %}" alt="img">
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--footer End-->
+    </div>
+    <!--quickview Start-->
+    <!--quickview Start-->
+    <div id="section-quickview">
+        <div class="modal fade sigma_quick-view-modal" id="quickViewModal" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="sigma_close" data-dismiss="modal">
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="row sigma_product-single">
+                            <div class="col-md-6">
+                                <div class="sigma_product-single-thumb">
+                                    <img src="" id="modal-image" alt="product">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="sigma_product-single-content">
+                                    <h4 id="modal-name"></h4>
+                                    <div class="sigma_product-price">
+                                        <span id="modal-price"></span>
+
+                                    </div>
+                                    <div class="sigma_rating-wrapper">
+                                        <div class="sigma_rating">
+                                            <i class="fas fa-star active"></i>
+                                            <i class="fas fa-star active"></i>
+                                            <i class="fas fa-star active"></i>
+                                            <i class="fas fa-star active"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <span>255 Reviews</span>
+                                    </div>
+                                    <hr>
+                                    <p class="sigma_product-excerpt" id="modal-desc">
+
+                                    </p>
+                                    <div class="sigma_product-meta">
+                                        <p><strong>Product SKU: <span id="modal-id"></span></strong>
+                                        </p>
+                                        <p><strong>Availablity: <span>In Stock</span></strong>
+                                        </p>
+
+                                    </div>
+
+                                    <hr>
+                                    <form class="sigma_product-atc-form">
+                                        <div class="sigma_product-buttons d-block">
+                                            <a href="/product-details/" class="ml-0 btn-block sigma_btn">Buy Now <i
+                                                    class="far fa-shopping-basket"></i> </a>
+                                            <a href="/product-details/" class="ml-0 btn-block sigma_btn light">Wishlist
+                                                <i
+                                                        class="far fa-heart"></i> </a>
+
+                                        </div>
+                                    </form>
+                                    <!-- Post Meta Start -->
+                                    <div class="sigma_post-single-meta">
+                                        <div class="sigma_post-single-meta-item sigma_post-share">
+                                            <h5>Share</h5>
+                                            <ul class="sigma_sm">
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="fab fa-facebook-f"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="fab fa-linkedin-in"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="fab fa-twitter"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="fab fa-youtube"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- Post Meta End -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--quickview End-->
+    </div>
+    <script src="{% static 'assets/js/plugins/jquery-3.4.1.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/popper.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/bootstrap.min.js' %}"></script>
+
+    <script src="{% static 'assets/js/plugins/slick.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/imagesloaded.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/jquery.inview.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/ion.rangeSlider.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+
+    <script>
+        document.addEventListener("click", function (e) {
+
+            const btn = e.target.closest(".quick-view-btn");
+            if (!btn) return;
+
+            const productId = btn.dataset.id;
+
+            fetch("/quick-view/" + productId + "/")
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("modal-id").innerText = data.id;
+                    document.getElementById("modal-name").innerText = data.name;
+                    document.getElementById("modal-price").innerText = "₹ " + data.price;
+                    document.getElementById("modal-desc").innerText = data.desc;
+                    document.getElementById("modal-image").src = data.image;
+
+                    $('#quickViewModal').modal('show');
+                });
+        });
+
+        setTimeout(function() {
+    let alerts = document.querySelectorAll('.alert');
+    alerts.forEach(function(alert){
+        alert.style.display = 'none';
+    });
+}, 3000);
+
+
+function increaseQty(){
+    let qty = document.getElementById("quantity");
+
+    if(parseInt(qty.value) < 10){   // ✅ MAX LIMIT
+        qty.value = parseInt(qty.value) + 1;
+    }
+}
+
+function decreaseQty(){
+    let qty = document.getElementById("quantity");
+
+    if(parseInt(qty.value) > 1){   // ✅ MIN LIMIT
+        qty.value = parseInt(qty.value) - 1;
+    }
+}
+
+        document.addEventListener("DOMContentLoaded", function() {
+
+    document.querySelectorAll('.qty-btn').forEach(button => {
+        button.addEventListener('click', function () {
+
+            let cartId = this.dataset.id;
+            let action = this.dataset.action;
+
+            fetch("/update-quantity/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                    "X-CSRFToken": "{{ csrf_token }}"
+                },
+                body: "cart_id=" + cartId + "&action=" + action
+            })
+            .then(response => response.json())
+            .then(data => {
+
+                if (data.deleted) {
+                    location.reload();
+                    return;
+                }
+
+                // Update quantity instantly
+                document.getElementById("qty-" + cartId).innerText = data.quantity;
+
+                // Update row total instantly
+                document.getElementById("item-total-" + cartId).innerText =
+                    "₹" + data.item_total;
+
+                // Update grand total instantly
+                document.getElementById("grand-total").innerText =
+                    "₹" + data.grand_total;
+            });
+        });
+    });
+
+});
+        document.querySelector('input[name="phone"]').addEventListener('input', function () {
+    this.value = this.value.replace(/[^0-9]/g, '').slice(0,10);
+});
+
+    </script>
+
+
+</div>
+</body>
+
+
+<!-- Mirrored from metropolitanhost.com/themes/templatemoster/html/shoez/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 23 Jan 2026 05:52:57 GMT -->
+</html>

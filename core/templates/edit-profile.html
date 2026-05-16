@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %} Edit-Profile {% endblock %}
+{% block content %}
+
+<div class="container mt-5">
+    <h3>Edit Profile</h3>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <div class="mb-3">
+            <input type="text" name="first_name"
+                   value="{{ user.first_name }}"
+                   class="form-control" placeholder="First Name">
+        </div>
+
+        <div class="mb-3">
+            <input type="text" name="last_name"
+                   value="{{ user.last_name }}"
+                   class="form-control" placeholder="Last Name">
+        </div>
+
+        <div class="mb-3">
+            <input type="email" name="email"
+                   value="{{ user.email }}"
+                   class="form-control" placeholder="Email">
+        </div>
+
+        <div class="mb-3">
+            <input type="text" name="phone"
+                   value="{{ profile.phone }}"
+                   class="form-control" placeholder="Phone">
+        </div>
+
+        <div class="mb-3">
+            <input type="text" name="city"
+                   value="{{ profile.city }}"
+                   class="form-control" placeholder="City">
+        </div>
+
+        <button type="submit" class="btn btn-dark w-100">
+            Update Profile
+        </button>
+        <br>
+        <br>
+    </form>
+</div>
+
+{% endblock %}

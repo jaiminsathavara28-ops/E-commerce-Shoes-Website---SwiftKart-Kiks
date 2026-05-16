@@ -1,0 +1,280 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} shop {% endblock %}
+{% block content %}
+<div class="search-form-wrapper">
+    <div class="search-trigger sigma_close">
+        <span></span>
+        <span></span>
+    </div>
+    <form class="search-form" method="post">
+        <input type="text" placeholder="Search..." value="">
+        <button type="submit" class="search-btn">
+            <i class="fal fa-search m-0"></i>
+        </button>
+    </form>
+</div>
+<!--header End-->
+<!--subheader Start-->
+<div id="section-subheader">
+    <div class="sigma_subheader style-9 bg-cover bg-center"
+         style="background-image: url({% static 'assets/img/shop/1920x800.jpg' %})">
+        <div class="container">
+            <div class="sigma_subheader-inner">
+                <h1>Shop</h1>
+            </div>
+        </div>
+    </div>
+    <!--subheader End-->
+</div>
+<!--preloader Start-->
+<div id="section-preloader">
+    <div class="sigma_preloader sigma_preloader-default">
+        <div class="sigma_preloader-inner">
+            <i></i><i></i><i></i><i></i>
+        </div>
+    </div>
+    <!--preloader End-->
+</div>
+<!--popup Start-->
+<div id="section-popup">
+    <div class="modal fade" id="sigma_popup-newsletter" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog sigma_newsletter-popup-modal style-4 modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body dark-overlay bg-cover bg-center"
+                     style="background-image: url({% static 'assets/img/shop/600x428.jpg' %})">
+                    <div class="sigma_close light newsletter-popup-trigger" data-dismiss="modal">
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="sigma_newsletter-popup-text-wrapper">
+                        <h3 class="text-white">Join Our Newsletter</h3>
+                        <p>Get the latest offers and exclusive deals, styles and competitions!</p>
+                    </div>
+                    <form method="post" class="text-center">
+                        <div class="form-group">
+                            <input type="email" placeholder="Email Address" class="form-control" name="newsletter-email"
+                                   value="">
+                        </div>
+                        <button type="submit" name="button">Subscribe</button>
+                        <span class="sigma_newsletter-popup-dismiss newsletter-popup-trigger" data-dismiss="modal">Don't show again</span>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--popup End-->
+</div>
+<!--shop Start-->
+<div id="section-shop">
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <form method="GET" action="">
+                        <div class="input-group">
+                            <input type="text"
+                                   name="q"
+                                   class="form-control"
+                                   placeholder="Search products..."
+                                   value="{{ request.GET.q }}">
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-danger">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <br>
+                    <div class="row masonry">
+                        <!-- Product Start -->
+                        {% for p in page_obj %}
+                        <div class="col-md-6 masonry-item">
+                            <div class="sigma_product style-2">
+                                <div class="sigma_product-thumb" style="background-color: #f8f9fa;
+
+ padding:15px; border-radius:px;">
+
+                                    <!-- IMAGE → PRODUCT DETAIL PAGE -->
+                                    <a href="{% url 'product_details' p.id p.slug%}">
+                                        {% if p.product_image %}
+                                        <img src="{{ p.product_image.url }}" alt="{{ p.p_title }}">
+                                        {% else %}
+                                        <img src="{% static 'img/no-image.png' %}" alt="No Image">
+                                        {% endif %}
+                                    </a>
+
+                                    <!-- CONTROLS -->
+                                    <div class="sigma_product-controls">
+                                        <a href="{% url 'add_wishlist' p.id %}" data-toggle="tooltip"
+                                           title="Wishlist">
+                                            <i class="far fa-heart"></i>
+                                        </a>
+
+                                        <!-- QUICK VIEW ONLY HERE -->
+                                        <a href="javascript:void(0);"
+                                           class="quick-view-btn"
+                                           data-id="{{ p.id }}"
+                                           title="Quick View">
+                                            <i class="far fa-eye"></i>
+                                        </a>
+                                    </div>
+
+                                </div>
+
+                                <div class="sigma_product-body">
+
+                                    <h5 class="sigma_product-title">
+                                        <a href="{% url 'product_details' p.id p.slug %}">{{ p.p_title }}</a>
+                                    </h5>
+
+                                    <!--                                    <p>{{ p.p_description }}</p>-->
+
+                                    <div class="sigma_product-price">
+                                        <span>₹{{ p.p_price }}</span>
+
+                                    </div>
+
+                                    <!--                                    <a href="#" class="sigma_btn btn-sm">Add to Cart</a>-->
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                        <!-- Product End -->
+                    </div>
+                    <!-- Pagination Start -->
+                    <ul class="pagination">
+
+                        {% if page_obj.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page=1">«</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ page_obj.previous_page_number }}">‹</a>
+                        </li>
+                        {% endif %}
+
+                        {% for num in page_obj.paginator.page_range %}
+                        {% if page_obj.number == num %}
+                        <li class="page-item active">
+                            <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                        </li>
+                        {% else %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+
+                        {% if page_obj.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ page_obj.next_page_number }}">›</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">»</a>
+                        </li>
+                        {% endif %}
+
+                    </ul>
+
+                    <!-- Pagination End -->
+                </div>
+                <!-- Sidebar Start -->
+                <div class="col-lg-4">
+                    <div class="sidebar">
+
+                        <!-- Filter: Price Start -->
+                        <form method="GET">
+
+                            <h5>Price</h5>
+
+                            <input type="number" name="min_price"
+                                   placeholder="Min"
+                                   class="form-control mb-2"
+                                   value="{{ request.GET.min_price }}">
+
+                            <input type="number" name="max_price"
+                                   placeholder="Max"
+                                   class="form-control mb-2"
+                                   value="{{ request.GET.max_price }}">
+
+                            <button type="submit" class="btn btn-danger btn-block">
+                                Apply Filter
+                            </button>
+
+                        </form>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+
+
+                        <!-- Category Widget -->
+                        <div class="widget widget-categories">
+                            <h5 class="widget-title">Categories</h5>
+                            <ul>
+                                {% for c in categories %}
+                                <li>
+                                    <a href="?category={{ c.id }}"
+                                       class="{% if c.id == selected_category %}active{% endif %}">
+                                        {{ c.name }}
+
+                                        <span>{{ c.products.count }}</span>
+                                    </a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <!-- Recent Posts Widget -->
+                        <div class="widget widget-sigma-recent-posts">
+                            <h5 class="widget-title">Most Commented</h5>
+                            <div class="sigma_recent-post">
+                                <a href="/blog-details/" class="recent-post-image">
+                                    <img src="{% static 'assets/img/shop/80x80.jpg' %}" alt="img">
+                                    <span>12</span>
+                                </a>
+                                <div class="recent-post-descr">
+                                    <h6>
+                                        <a href="/blog-details/">Every Next Level Of Your Life Will Demand</a>
+                                    </h6>
+                                    <a href="/blog-details/" class="date">
+                                        <i class="far fa-clock mr-2"></i>
+                                        June 4, 2024
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sigma_recent-post">
+                                <a href="/blog-details/" class="recent-post-image">
+                                    <img src="{% static 'assets/img/shop/80x80-0.jpg' %}" alt="img">
+                                    <span>6</span>
+                                </a>
+                                <div class="recent-post-descr">
+                                    <h6>
+                                        <a href="/blog-details/">It is them who will figure out the pattern</a>
+                                    </h6>
+                                    <a href="/blog-details/" class="date">
+                                        <i class="far fa-clock mr-2"></i>
+                                        June 4, 2024
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Subscribe Widget -->
+                        
+                    </div>
+                </div>
+                <!-- Sidebar End -->
+            </div>
+        </div>
+    </div>
+    <!--shop End-->
+</div>
+<!--to-top Start-->
+<div id="section-to-top">
+    <div class="sigma_top">
+        <i class="far fa-arrow-up"></i>
+    </div>
+    <!--to-top End-->
+</div>
+
+
+{% endblock %}

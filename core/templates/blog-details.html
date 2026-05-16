@@ -1,0 +1,520 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} blog-details {% endblock %}
+{% block content %}
+
+    <div class="search-form-wrapper">
+      <div class="search-trigger sigma_close">
+        <span></span>
+        <span></span>
+      </div>
+      <form class="search-form" method="post">
+        <input type="text" placeholder="Search..." value="">
+        <button type="submit" class="search-btn">
+          <i class="fal fa-search m-0"></i>
+        </button>
+      </form>
+    </div>
+    <!--header End-->
+  </div>
+  <!--subheader Start-->
+  <div id="section-subheader">
+    <div class="sigma_subheader style-9 bg-cover bg-center" style="background-image: url({% static 'assets/img/blog-details/1920x800.jpg' %})">
+      <div class="container">
+        <div class="sigma_subheader-inner">
+          <h1>Blog Details</h1>
+        </div>
+      </div>
+    </div>
+    <!--subheader End-->
+  </div>
+  <!--preloader Start-->
+  <div id="section-preloader">
+    <div class="sigma_preloader sigma_preloader-default">
+      <div class="sigma_preloader-inner">
+        <i></i><i></i><i></i><i></i>
+      </div>
+    </div>
+    <!--preloader End-->
+  </div>
+  <!--popup Start-->
+  <div id="section-popup">
+    <div class="modal fade" id="sigma_popup-newsletter" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog sigma_newsletter-popup-modal style-4 modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body dark-overlay bg-cover bg-center" style="background-image:  url({% static 'assets/img/blog-details/1920x800.jpg' %})">
+            <div class="sigma_close light newsletter-popup-trigger" data-dismiss="modal">
+              <span></span>
+              <span></span>
+            </div>
+            <div class="sigma_newsletter-popup-text-wrapper">
+              <h3 class="text-white">Join Our Newsletter</h3>
+              <p>Get the latest offers and exclusive deals, styles and competitions!</p>
+            </div>
+            <form method="post" class="text-center">
+              <div class="form-group">
+                <input type="email" placeholder="Email Address" class="form-control" name="newsletter-email" value="">
+              </div>
+              <button type="submit" name="button">Subscribe</button>
+              <span class="sigma_newsletter-popup-dismiss newsletter-popup-trigger" data-dismiss="modal">Don't show again</span>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--popup End-->
+  </div>
+  <!--blog-details Start-->
+  <div id="section-blog-details">
+    <div class="section sigma_post-details style-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="sigma_post-details-inner">
+              <div class="entry-content">
+                <div class="sigma_post-details-categories">
+                  <a href="#" class="sigma_post-category">Shoez</a>
+                </div>
+                <h2 class="entry-title">Developing Shoes in the new age is a bit of a process with the new tech</h2>
+                <div class="sigma_post-details-meta">
+                  <span> <i class="far fa-eye"></i> 131 Views</span>
+                  <span> <i class="far fa-comments"></i> 2 Comments</span>
+                  <span> <i class="far fa-calendar"></i> March 12, 2024</span>
+                </div>
+                <p>
+                  Known for its durability and comfort, the Dr. Martens 1460 boot is a classic and recognised worldwide. The ankle boot features the tough black leather, 8 eyelets, trademark yellow stitches and the air-cushioned AirWair sole unit for maximum comfort. Arriving just in time for new season style, we meet the Kickers Tovni Trip! Arriving in a full black colourway paired with a premium leather upper and easy strap fastenings. Durable sole and iconic branding complete. Button details at the toe and a subtle ripple of the fabric make the Blowfish GoGoGo Vegan really pop. The man-made upper offers a versatile black colourway while a cushioned insole means this pump is super comfy too. Simple, underrated style is back - and we're here for it. The Lucia Detail Ballerina shoe lands in a black man-made upper with a patent toe and chain detail for undeniable style.colourway paired with a simple and comfortable silhouette for all day style. Casual with a sporty finish - just how we like it. The schuh Wes Cupsole
+                </p>
+                <p>
+                  Arriving just in time for new season style, we meet the Kickers Tovni Trip! Arriving in a full black colourway paired with a premium leather upper and easy strap fastenings. Durable sole and iconic branding complete. Button details at the toe and a subtle ripple of the fabric make the Blowfish GoGoGo Vegan really pop. The man-made upper offers a versatile black colourway while a cushioned insole.
+                </p>
+                <a href="assets/img/blog-details/800x400.jpg" class="gallery-thumb">
+                  <img src="{% static 'assets/img/blog-details/800x400.jpg' %}" alt="post">
+                </a>
+                <h4>The shining of shoe does matter</h4>
+                <p>
+                  Simple, underrated style is back - and we're here for it. The Lucia Detail Ballerina shoe lands in a black man-made upper with a patent toe and chain detail for undeniable style.colourway paired with a simple and comfortable silhouette for all day style. Casual with a sporty finish - just how we like it. The schuh Wes Cupsole
+                </p>
+                <hr>
+                <h4>Nike-white air max sc trainers</h4>
+                <div class="row">
+                  <div class="col-lg-4">
+                    <img src="{% static 'assets/img/blog-details/200x170.jpg' %}" alt="details">
+                  </div>
+                  <div class="col-lg-8">
+                    <p>
+                      Button details at the toe and a subtle ripple of the fabric make the Blowfish GoGoGo Vegan really pop. The man-made upper offers a versatile black colourway while a cushioned insole means this pump is super comfy too. Simple, underrated style is back - and we're here for it. 
+                    </p>
+                  </div>
+                </div>
+                <hr>
+                <h4>Dr Martens Shoes</h4>
+                <div class="sigma_general-list style-3">
+                  <ul>
+                    <li>
+                      <i class="far fa-check"></i>
+                      <span>Bonny Leather</span>
+                    </li>
+                    <li>
+                      <i class="far fa-check"></i>
+                      <span>Soloman</span>
+                    </li>
+                    <li>
+                      <i class="far fa-check"></i>
+                      <span>Rakim</span>
+                    </li>
+                    <li>
+                      <i class="far fa-check"></i>
+                      <span>Pride</span>
+                    </li>
+                    <li>
+                      <i class="far fa-check"></i>
+                      <span>Cabrillo</span>
+                    </li>
+                  </ul>
+                </div>
+                <blockquote>
+                  <cite>By Hetmayar</cite>
+                  <p>Recent shoe upgrade? Mention @Shoez in your post or upload your look straight to our gallery for a chance to be featured..</p>
+                </blockquote>
+                <p>
+                  The Lucia Detail Ballerina shoe lands in a black man-made upper with a patent toe and chain detail for undeniable style.colourway paired with a simple and comfortable silhouette for all day style. Casual with a sporty finish - just how we like it. The schuh Wes Cupsole. Known for its durability and comfort, the Dr. Martens 1460 boot is a classic and recognised worldwide. The ankle boot features the tough black leather, 8 eyelets, trademark yellow stitches and the air-cushioned.
+                </p>
+                <div class="row align-items-center">
+                  <div class="col-lg-5 mb-lg-30">
+                    <img src="{% static 'assets/img/blog-details/260x290.jpg' %}" alt="details">
+                  </div>
+                  <div class="col-lg-7">
+                    <p>
+                      Go formal with this comfy Reasan Lace shoe from Kickers. The black leather upper boasts a raised moc toe seam and delicate stitched details. Branding completes. Casual with a sporty finish - just how we like it. The schuh Wes Cupsole. Known for its durability and comfort, the Dr. Martens 1460 boot is a classic and recognised worldwide. The ankle boot features the tough black leather, 8 eyelets, trademark yellow stitches and the air-cushioned. Durable sole and iconic branding complete.
+                    </p>
+                  </div>
+                </div>
+                <p>
+                  Button details at the toe and a subtle ripple of the fabric make the Blowfish GoGoGo Vegan really pop. The man-made upper offers a versatile black colourway while a cushioned insole means this pump is super comfy too. Simple, underrated style is back - and we're here for it. The Lucia Detail Ballerina shoe lands in a black man-made upper with a patent toe and chain detail for undeniable style.colourway paired with a simple and comfortable silhouette for all day style. Go formal with this comfy
+                </p>
+              </div>
+              <!-- Post Meta Start -->
+              <div class="sigma_post-details-meta justify-content-between">
+                <div class="sigma_post-details-meta-item">
+                  <h5>Related Tags</h5>
+                  <div class="tagcloud">
+                    <a href="#">Portfolio</a>
+                    <a href="#">Creative</a>
+                    <a href="#">Intuitive</a>
+                  </div>
+                </div>
+                <div class="sigma_post-details-meta-item sigma_post-share text-right">
+                  <h5>Social Share</h5>
+                  <ul class="sigma_sm justify-content-end">
+                    <li>
+                      <a href="#">
+                        <i class="fab fa-facebook-f"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="fab fa-linkedin-in"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="fab fa-twitter"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="fab fa-youtube"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- Post Meta End -->
+              <hr>
+              <div class="sigma_single-pagination">
+                <div class="sigma_single-pagination-item sigma_single-pagination-prev">
+                  <a href="#">
+                    <div class="sigma_single-pagination-content">
+                      <span>Prev Post</span>
+                      <h4 class="mb-0">Tips On Minimalist</h4>
+                    </div>
+                  </a>
+                </div>
+                <div class="grid-block">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="sigma_single-pagination-item sigma_single-pagination-next">
+                  <a href="#">
+                    <div class="sigma_single-pagination-content">
+                      <span>Next Post</span>
+                      <h4 class="mb-0">Less is More</h4>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <hr>
+              <!-- Related Posts Start -->
+              <div class="sigma_related-posts">
+                <h3>Related Posts</h3>
+                <div class="row">
+                  <!-- Article Start -->
+                  <div class="col-md-6">
+                    <article class="sigma_post style-5">
+                      <div class="sigma_post-thumb">
+                        <a href="/blog-details/" class="d-block">
+                          <img src="{% static 'assets/img/blog-details/350x350.jpg' %}" alt="img">
+                        </a>
+                      </div>
+                      <div class="sigma_post-body">
+                        <div class="sigma_post-meta border-0 p-0">
+                          <a href="/blog-details/" class="d-block">
+                            <i class="fal fa-calendar-alt"></i>
+                            24th March 2024
+                          </a>
+                        </div>
+                        <div class="sigma_post-content">
+                          <h5>
+                            <a href="/blog-details/">Tips for Best Shoes Quality</a>
+                          </h5>
+                          <p class="m-0">The ankle boot features the tough black leather, 8 eyelets, trademark yellow stitches
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <!-- Article End -->
+                  <!-- Article Start -->
+                  <div class="col-md-6">
+                    <article class="sigma_post style-5">
+                      <div class="sigma_post-thumb">
+                        <a href="/blog-details/" class="d-block">
+                          <img src="{% static 'assets/img/blog-details/350x350-0.jpg' %}" alt="img">
+                        </a>
+                      </div>
+                      <div class="sigma_post-body">
+                        <div class="sigma_post-meta border-0 p-0">
+                          <a href="/blog-details/" class="d-block">
+                            <i class="fal fa-calendar-alt"></i>
+                            12th June 2024
+                          </a>
+                        </div>
+                        <div class="sigma_post-content">
+                          <h5>
+                            <a href="/blog-details/">Know More About Sandals</a>
+                          </h5>
+                          <p class="m-0">The air-cushioned AirWair sole unit for maximum comfort.
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <!-- Article End -->
+                </div>
+              </div>
+              <!-- Related Posts End -->
+              <!-- About Author Start -->
+              <div class="author">
+                <div class="sigma_author-about">
+                  <img src="{% static 'assets/img/blog-details/150x180.jpg' %}" alt="author">
+                  <div class="sigma_author-about-content">
+                    <span>Written By</span>
+                    <h3>Rosalina D. William</h3>
+                    <p>The Lucia Detail Ballerina shoe lands in a black man-made upper with a patent toe and chain detail for undeniable style.colourway paired with a simple and comfortable silhouette for all day style. Go formal with this comfy 
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- About Author End -->
+              <!-- Comments Start -->
+              <div class="comments">
+                <h3>03 Comments</h3>
+                <div class="comments-list">
+                  <ul>
+                    <li class="comment-item">
+                      <img src="{% static 'assets/img/blog-details/150.jpg' %}" alt="comment author">
+                      <div class="comment-body">
+                        <h5>Robert John</h5>
+                        <span> <i class="far fa-clock"></i> January 13 2024</span>
+                        <p>I love the variety of items this shop offers. A little something for everyone and I can’t say enough about the wonderful service.</p>
+                        <a href="#" class="btn-link"><i class="far fa-reply ml-0 mr-2"></i> Reply  </a>
+                      </div>
+                    </li>
+                    <li class="comment-item">
+                      <img src="{% static 'assets/img/blog-details/150-0.jpg' %}" alt="comment author">
+                      <div class="comment-body">
+                        <h5>Christine Hill</h5>
+                        <span> <i class="far fa-clock"></i> December 27 2024</span>
+                        <p>Absolutely wonderful! Gift shop has got everything I need. I STRONGLY recommend gift shop to everyone! Really I love it</p>
+                        <a href="#" class="btn-link"><i class="far fa-reply ml-0 mr-2"></i> Reply  </a>
+                      </div>
+                    </li>
+                    <li class="comment-item">
+                      <img src="{% static 'assets/img/blog-details/150-1.jpg' %}" alt="comment author">
+                      <div class="comment-body">
+                        <h5>Christine Hill</h5>
+                        <span> <i class="far fa-clock"></i> December 27 2024</span>
+                        <p>Not able to tell you how happy I am with gift shop. I would like to personally thank you for your outstanding products</p>
+                        <a href="#" class="btn-link"><i class="far fa-reply ml-0 mr-2"></i> Reply  </a>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <hr>
+              <div class="comment-form-wrapper">
+                <h3>Post  Comment</h3>
+                <div class="comment-form">
+                  <form method="post">
+                    <div class="form-group">
+                      <textarea class="form-control" placeholder="Type Your Comment" name="comment" rows="7"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <i class="far fa-user custom-primary"></i>
+                      <input type="text" placeholder="Your Name" class="form-control" name="fname" value="">
+                    </div>
+                    <div class="form-group">
+                      <i class="far fa-envelope custom-primary"></i>
+                      <input type="email" placeholder="Your Email" class="form-control" name="email" value="">
+                    </div>
+                    <div class="form-group">
+                      <i class="far fa-globe custom-primary"></i>
+                      <input type="text" placeholder="Your Website" class="form-control" name="website" value="">
+                    </div>
+                    <button type="submit" class="sigma_btn-custom" name="button">Post Comment <i class="far fa-comments"></i> 
+                    </button>
+                  </form>
+                </div>
+              </div>
+              <!-- Comments End -->
+            </div>
+          </div>
+          <!-- Sidebar Start -->
+          <div class="col-lg-4 mt-5 mt-lg-0">
+            <div class="sidebar">
+              <!-- Search Widget -->
+              <div class="widget widget-about">
+                <h5 class="widget-title">About Me</h5>
+                <div class="sigma_author-box text-center">
+                  <img src="{% static 'assets/img/blog-details/140x140.jpg' %}" alt="img">
+                  <h5>Rosalina D. Willaimson</h5>
+                  <p class="mb-0">Not able to tell you how happy I am with gift shop. I would like to personally thank you for your outstanding products.</p>
+                  <ul class="sigma_sm justify-content-center">
+                    <li>
+                      <a href="#">
+                        <i class="fab fa-facebook-f"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="fab fa-linkedin-in"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="fab fa-twitter"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="fab fa-youtube"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- Search Widget -->
+              <div class="widget widget-search">
+                <h5 class="widget-title">Search</h5>
+                <div class="input-group">
+                  <input type="text" name="search" placeholder="Search">
+                  <div class="input-group-append">
+                    <button type="button">
+                      <i class="fal fa-search mr-0"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- Recent Posts Widget -->
+              <div class="widget widget-sigma-recent-posts">
+                <h5 class="widget-title">Popular Feeds</h5>
+                <div class="sigma_recent-post">
+                  <a href="/blog-details/" class="recent-post-image">
+                    <img src="{% static 'assets/img/blog-details/80x80.jpg' %}" alt="img">
+                  </a>
+                  <div class="recent-post-descr">
+                    <h6>
+                      <a href="/blog-details/">Every Next Level Of Your Life Will Demand</a>
+                    </h6>
+                    <a href="/blog-details/" class="date">
+                      <i class="far fa-calendar-alt mr-2"></i>
+                      June 4, 2024
+                    </a>
+                  </div>
+                </div>
+                <div class="sigma_recent-post">
+                  <a href="/blog-details/" class="recent-post-image">
+                    <img src="{% static 'assets/img/blog-details/80x80-0.jpg' %}" alt="img">
+                  </a>
+                  <div class="recent-post-descr">
+                    <h6>
+                      <a href="/blog-details/">This is a test to try out how things work</a>
+                    </h6>
+                    <a href="/blog-details/" class="date">
+                      <i class="far fa-calendar-alt mr-2"></i>
+                      January 4, 2024
+                    </a>
+                  </div>
+                </div>
+                <div class="sigma_recent-post">
+                  <a href="/blog-details/" class="recent-post-image">
+                    <img src="{% static 'assets/img/blog-details/80x80-1.jpg' %}" alt="img">
+                  </a>
+                  <div class="recent-post-descr">
+                    <h6>
+                      <a href="/blog-details/">It is them who will figure out the pattern</a>
+                    </h6>
+                    <a href="/blog-details/" class="date">
+                      <i class="far fa-calendar-alt mr-2"></i>
+                      March 19, 2024
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- Category Widget -->
+              <div class="widget widget-categories">
+                <h5 class="widget-title">Categories</h5>
+                <ul>
+                  <li>
+                    <a href="#">
+                      Men Shoes
+                      <span>12</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      Women Shoes
+                      <span>9</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      News
+                      <span>7</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      Kids Shoes
+                      <span>5</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      Kids Boots
+                      <span>3</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <!-- Tags Widget -->
+              <div class="widget tagcloud">
+                <h5 class="widget-title">Popular Tags</h5>
+                <a href="#">Shoes</a>
+                <a href="#">Boots</a>
+                <a href="#">Slippers</a>
+                <a href="#">Flip Flops</a>
+                <a href="#">Sandals</a>
+                <a href="#">High Heel</a>
+                <a href="#">Flat Shoes</a>
+                <a href="#">Casual Shoes</a>
+                <a href="#">Sliders</a>
+              </div>
+              <!-- Banner Widget -->
+              <div class="widget tagcloud">
+                <h5 class="widget-title">Sponsor Ads</h5>
+                <img src="{% static 'assets/img/blog-details/400.jpg' %}" alt="img">
+              </div>
+            </div>
+          </div>
+          <!-- Sidebar End -->
+        </div>
+      </div>
+    </div>
+    <!--blog-details End-->
+  </div>
+  <!--to-top Start-->
+  <div id="section-to-top">
+    <div class="sigma_top">
+      <i class="far fa-arrow-up"></i>
+    </div>
+    <!--to-top End-->
+  </div>
+ {% endblock %}

@@ -1,0 +1,498 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} blog {% endblock %}
+{% block content %}
+
+    <div class="search-form-wrapper">
+      <div class="search-trigger sigma_close">
+        <span></span>
+        <span></span>
+      </div>
+      <form class="search-form" method="post">
+        <input type="text" placeholder="Search..." value="">
+        <button type="submit" class="search-btn">
+          <i class="fal fa-search m-0"></i>
+        </button>
+      </form>
+    </div>
+    <!--header End-->
+  </div>
+  <!--subheader Start-->
+  <div id="section-subheader">
+    <div class="sigma_subheader style-9 bg-cover bg-center" style="background-image: url({% static 'assets/img/blog/1920x800.jpg' %})">
+      <div class="container">
+        <div class="sigma_subheader-inner">
+          <h1>Blog</h1>
+        </div>
+      </div>
+    </div>
+    <!--subheader End-->
+  </div>
+  <!--preloader Start-->
+  <div id="section-preloader">
+    <div class="sigma_preloader sigma_preloader-default">
+      <div class="sigma_preloader-inner">
+        <i></i><i></i><i></i><i></i>
+      </div>
+    </div>
+    <!--preloader End-->
+  </div>
+
+  </div>
+  <!--blog-archive Start-->
+  <div id="section-blog-archive">
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <!-- style 7 -->
+            <article class="sigma_post style-7">
+              <div class="sigma_post-thumb">
+                <a href="/blog-details/">
+                  <img src="{% static 'assets/img/blog/730x415.jpg' %}" alt="img">
+                </a>
+                <div class="sigma_post-categories">
+                  <a href="#" class="sigma_post-category">Shoez</a>
+                </div>
+              </div>
+              <div class="sigma_post-body">
+                <div class="sigma_post-content">
+                  <h5>
+                    <a href="/blog-details/">Saleswoman dealing with customer</a>
+                  </h5>
+                  <p>Known for its durability and comfort, the Dr. Martens 1460 boot is a classic and recognised worldwide. The ankle boot features the tough black leather, 8 eyelets, trademark yellow stitches and the air-cushioned AirWair sole unit for maximum comfort.
+                  </p>
+                  <div class="sigma_post-meta">
+                    <ul>
+                      <li class="author">
+                        <i class="fal fa-user-circle"></i>
+                        <a href="#">Henry Franko</a>
+                      </li>
+                      <li>
+                        <i class="fal fa-calendar-alt"></i>
+                        on <a href="/blog-details/" class="ml-2">Jan, 6 2024</a>
+                      </li>
+                      <li>
+                        <i class="fal fa-comment-dots"></i>
+                        <a href="#">572</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="sigma_post style-7">
+              <div class="sigma_post-body pt-0">
+                <div class="sigma_post-content">
+                  <h5>
+                    <a href="/blog-details/">Kickers-black tovni trip shoes</a>
+                  </h5>
+                  <p>Arriving just in time for new season style, we meet the Kickers Tovni Trip! Arriving in a full black colourway paired with a premium leather upper and easy strap fastenings. Durable sole and iconic branding complete.
+                  </p>
+                  <div class="sigma_post-meta">
+                    <ul>
+                      <li class="author">
+                        <i class="fal fa-user-circle"></i>
+                        <a href="#">Joseph Hardy</a>
+                      </li>
+                      <li>
+                        <i class="fal fa-calendar-alt"></i>
+                        on <a href="/blog-details/" class="ml-2">Apr, 12 2024</a>
+                      </li>
+                      <li>
+                        <i class="fal fa-comment-dots"></i>
+                        <a href="#">452</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="sigma_post post-format-video style-7">
+              <div class="sigma_post-thumb">
+                <a href="/blog-details/">
+                  <img src="{% static 'assets/img/blog/730x415-0.jpg' %}" alt="img">
+                </a>
+                <a href="https://www.youtube.com/watch?v=rs5gAjNytAo" class="sigma_video-btn" target="_blank">
+                  <i class="far fa-play"></i>
+                </a>
+                <div class="sigma_post-categories">
+                  <a href="#" class="sigma_post-category">Architect</a>
+                </div>
+              </div>
+              <div class="sigma_post-body">
+                <div class="sigma_post-content">
+                  <h5>
+                    <a href="/blog-details/">Flat shoes demo video</a>
+                  </h5>
+                  <p>Button details at the toe and a subtle ripple of the fabric make the Blowfish GoGoGo Vegan really pop. The man-made upper offers a versatile black colourway while a cushioned insole means this pump is super comfy too.
+                  </p>
+                  <div class="sigma_post-meta">
+                    <ul>
+                      <li class="author">
+                        <i class="fal fa-user-circle"></i>
+                        <a href="#">Sarah Henry</a>
+                      </li>
+                      <li>
+                        <i class="fal fa-calendar-alt"></i>
+                        on <a href="/blog-details/" class="ml-2">Aug, 7 2024</a>
+                      </li>
+                      <li>
+                        <i class="fal fa-comment-dots"></i>
+                        <a href="#">820</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="sigma_post post-format-gallery style-7">
+              <div class="sigma_post-thumb">
+                <img src="{% static 'assets/img/blog/730x415-1.jpg' %}" alt="img">
+                <img src="{% static 'assets/img/blog/730x415-2.jpg' %}" alt="img">
+                <img src="{% static 'assets/img/blog/730x415-3.jpg' %}" alt="img">
+                <img src="{% static 'assets/img/blog/730x415-4.jpg' %}" alt="img">
+              </div>
+              <div class="sigma_post-categories">
+                <a href="#" class="sigma_post-category">Building</a>
+              </div>
+              <div class="sigma_post-body">
+                <div class="sigma_post-content">
+                  <h5>
+                    <a href="/blog-details/">Shoes collection Gallery</a>
+                  </h5>
+                  <p>Simple, underrated style is back - and we're here for it. The Lucia Detail Ballerina shoe lands in a black man-made upper with a patent toe and chain detail for undeniable style.colourway paired with a simple and comfortable silhouette for all day style. 
+                  </p>
+                  <div class="sigma_post-meta">
+                    <ul>
+                      <li class="author">
+                        <i class="fal fa-user-circle"></i>
+                        <a href="#">Andrew Simon</a>
+                      </li>
+                      <li>
+                        <i class="fal fa-calendar-alt"></i>
+                        on <a href="/blog-details/" class="ml-2">Nov, 6 2024</a>
+                      </li>
+                      <li>
+                        <i class="fal fa-comment-dots"></i>
+                        <a href="#">572</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="sigma_post post-format-quote style-7">
+              <blockquote>
+                <h5 class="text-white">Casual with a sporty finish - just how we like it. The schuh Wes Cupsole</h5>
+                <cite>
+                  <span>TA</span>
+                  Tim Abel
+                </cite>
+              </blockquote>
+            </article>
+            <article class="sigma_post post-format-audio style-7">
+              <div class="sigma_post-thumb">
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-item" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/41395010&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;visual=false">
+                  </iframe>
+                </div>
+              </div>
+              <div class="sigma_post-body">
+                <div class="sigma_post-content">
+                  <h5>
+                    <a href="/blog-details/">Leather tips in Audio</a>
+                  </h5>
+                  <p>Hit the beach, shops or your favourite sunny spot with BIRKENSTOCK. The Gizeh is a thong style sandal with a green EVA construction that's washable, durable and filled with comfort.
+                  </p>
+                  <div class="sigma_post-meta">
+                    <ul>
+                      <li class="author">
+                        <i class="fal fa-user-circle"></i>
+                        <a href="#">Henry Franko</a>
+                      </li>
+                      <li>
+                        <i class="fal fa-calendar-alt"></i>
+                        on <a href="/blog-details/" class="ml-2">Jan, 6 2024</a>
+                      </li>
+                      <li>
+                        <i class="fal fa-comment-dots"></i>
+                        <a href="#">572</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="sigma_post post-format-link style-7">
+              <div class="sigma_post-body">
+                <div class="sigma_post-content">
+                  <h5>Coming Together, Sharing Together, Working Together, Succeeding Together.</h5>
+                  <div class="sigma_post-meta">
+                    <a href="#">
+                      <i class="fal fa-link"></i>
+                      www.yourlink.com
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="sigma_post style-7">
+              <div class="sigma_post-thumb">
+                <a href="/blog-details/">
+                  <img src="{% static 'assets/img/blog/730x415-5.jpg' %}" alt="img">
+                </a>
+                <div class="sigma_post-categories">
+                  <a href="#" class="sigma_post-category">Shoez</a>
+                </div>
+              </div>
+              <div class="sigma_post-body">
+                <div class="sigma_post-content">
+                  <h5>
+                    <a href="/blog-details/">Nike-white air max sc trainers</a>
+                  </h5>
+                  <p>Old-skool look, new-school comfort! The Nike Air Max SC trainer defines style with its heritage silhouette, easy going lines and unbeatable Air cushioning. White colourway and Swoosh branding completes.
+                  </p>
+                  <div class="sigma_post-meta">
+                    <ul>
+                      <li class="author">
+                        <i class="fal fa-user-circle"></i>
+                        <a href="#">Thomas Otto</a>
+                      </li>
+                      <li>
+                        <i class="fal fa-calendar-alt"></i>
+                        on <a href="/blog-details/" class="ml-2">Dec, 16 2024</a>
+                      </li>
+                      <li>
+                        <i class="fal fa-comment-dots"></i>
+                        <a href="#">660</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="sigma_post style-7">
+              <div class="sigma_post-thumb">
+                <a href="/blog-details/">
+                  <img src="{% static 'assets/img/blog/730x415-6.jpg' %}" alt="img">
+                </a>
+                <div class="sigma_post-categories">
+                  <a href="#" class="sigma_post-category">Building</a>
+                </div>
+              </div>
+              <div class="sigma_post-body">
+                <div class="sigma_post-content">
+                  <h5>
+                    <a href="/blog-details/">Kickers-black kick lace shoes</a>
+                  </h5>
+                  <p>Go formal with this comfy Reasan Lace shoe from Kickers. The black leather upper boasts a raised moc toe seam and delicate stitched details. Branding completes. Go formal with this comfy Reasan Lace shoe from Kickers.
+                  </p>
+                  <div class="sigma_post-meta">
+                    <ul>
+                      <li class="author">
+                        <i class="fal fa-user-circle"></i>
+                        <a href="#">Maria Benzo</a>
+                      </li>
+                      <li>
+                        <i class="fal fa-calendar-alt"></i>
+                        on <a href="/blog-details/" class="ml-2">Jan, 16 2024</a>
+                      </li>
+                      <li>
+                        <i class="fal fa-comment-dots"></i>
+                        <a href="#">767</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+          </div>
+          <div class="col-lg-4">
+            <div class="sidebar">
+              <!-- Search Widget -->
+
+              </div>
+              <!-- Recent Posts Widget -->
+              <div class="widget widget-sigma-recent-posts">
+                <h5 class="widget-title">Most Commented</h5>
+                <div class="sigma_recent-post">
+                  <a href="/blog-details/" class="recent-post-image">
+                    <img src="{% static 'assets/img/blog/80x80.jpg' %}" alt="img">
+                    <span>12</span>
+                  </a>
+                  <div class="recent-post-descr">
+                    <h6>
+                      <a href="/blog-details/">Every Next Level Of Your Life Will Demand</a>
+                    </h6>
+                    <a href="/blog-details/" class="date">
+                      <i class="far fa-clock mr-2"></i>
+                      June 4, 2024
+                    </a>
+                  </div>
+                </div>
+                <div class="sigma_recent-post">
+                  <a href="/blog-details/" class="recent-post-image">
+                    <img src="{% static 'assets/img/blog/80x80-0.jpg' %}" alt="img">
+                    <span>9</span>
+                  </a>
+                  <div class="recent-post-descr">
+                    <h6>
+                      <a href="/blog-details/">This is a test to try out how things work</a>
+                    </h6>
+                    <a href="/blog-details/" class="date">
+                      <i class="far fa-clock mr-2"></i>
+                      March 19, 2024
+                    </a>
+                  </div>
+                </div>
+                <div class="sigma_recent-post">
+                  <a href="/blog-details/" class="recent-post-image">
+                    <img src="{% static 'assets/img/blog/80x80-1.jpg' %}" alt="img">
+                    <span>6</span>
+                  </a>
+                  <div class="recent-post-descr">
+                    <h6>
+                      <a href="/blog-details/">It is them who will figure out the pattern</a>
+                    </h6>
+                    <a href="/blog-details/" class="date">
+                      <i class="far fa-clock mr-2"></i>
+                      November 12, 2024
+                    </a>
+                  </div>
+                </div>
+              </div>
+            <br><br><br>
+              <!-- Recent Posts Widget -->
+              <div class="widget widget-sigma-recent-posts style-2">
+                <h5 class="widget-title">Recommended</h5>
+                <div class="sigma_recent-post">
+                  <a href="/blog-details/" class="recent-post-image">
+                    <img src="{% static 'assets/img/blog/325x150.jpg' %}" alt="img">
+                  </a>
+                  <div class="recent-post-descr">
+                    <h6>
+                      <a href="/blog-details/">Every Next Level Of Your Life Will Demand Something</a>
+                    </h6>
+                    <a href="/blog-details/" class="date">
+                      <i class="far fa-clock mr-2"></i>
+                      June 4, 2024
+                    </a>
+                  </div>
+                </div>
+                <div class="sigma_recent-post">
+                  <a href="/blog-details/" class="recent-post-image">
+                    <img src="{% static 'assets/img/blog/325x150-0.jpg' %}" alt="img">
+                  </a>
+                  <div class="recent-post-descr">
+                    <h6>
+                      <a href="/blog-details/">We are the champions, we do not give up, we try</a>
+                    </h6>
+                    <a href="/blog-details/" class="date">
+                      <i class="far fa-clock mr-2"></i>
+                      March 19, 2024
+                    </a>
+                  </div>
+                </div>
+              </div>
+            <br><br><br>
+              <!-- Follow Widget -->
+              <div class="widget widget-follow">
+                <h5 class="widget-title">Follow Us</h5>
+                <div class="social-buttons">
+                  <a href="#" class="btn-block sigma_btn">
+                    <div class="follow-icon d-flex align-items-center">
+                      <i class="fab fa-instagram"></i>
+                      <p class="mb-0">
+                        Instagram
+                        <span>225.5k Followers</span>
+                      </p>
+                    </div>
+                    <i class="fal fa-chevron-right"></i>
+                  </a>
+                  <a href="#" class="btn-block sigma_btn">
+                    <div class="follow-icon d-flex align-items-center">
+                      <i class="fab fa-twitter"></i>
+                      <p class="mb-0">
+                        Twitter
+                        <span>225.5k Followers</span>
+                      </p>
+                    </div>
+                    <i class="fal fa-chevron-right"></i>
+                  </a>
+                  <a href="#" class="btn-block sigma_btn">
+                    <div class="follow-icon d-flex align-items-center">
+                      <i class="fab fa-facebook-f"></i>
+                      <p class="mb-0">
+                        Facebook
+                        <span>225.5k Followers</span>
+                      </p>
+                    </div>
+                    <i class="fal fa-chevron-right"></i>
+                  </a>
+                  <a href="#" class="btn-block sigma_btn">
+                    <div class="follow-icon d-flex align-items-center">
+                      <i class="fab fa-youtube"></i>
+                      <p class="mb-0">
+                        Youtube
+                        <span>225.5k Followers</span>
+                      </p>
+                    </div>
+                    <i class="fal fa-chevron-right"></i>
+                  </a>
+                </div>
+              </div>
+            <br><br><br>
+              <!-- Recent Post Widget -->
+              <div class="widget widget-sigma-recent-posts style-4">
+                <h5 class="widget-title">Recent Comments</h5>
+                <div class="sigma_recent-post align-items-start">
+                  <a href="#" class="recent-post-image">
+                    <i class="fal fa-comment-alt-dots"></i>
+                  </a>
+                  <div class="recent-post-descr">
+                    <h6>
+                      <a href="#"><span>Tim Abell On</span> Five Places to visit in Oakland with Fantastic Ngrito </a>
+                    </h6>
+                  </div>
+                </div>
+                <div class="sigma_recent-post align-items-start">
+                  <a href="#" class="recent-post-image">
+                    <i class="fal fa-comment-alt-dots"></i>
+                  </a>
+                  <div class="recent-post-descr">
+                    <h6>
+                      <a href="#"><span>Andrew Simon On</span> Recent Condition of Oakland With Fantastic Ngrito </a>
+                    </h6>
+                  </div>
+                </div>
+                <div class="sigma_recent-post align-items-start">
+                  <a href="#" class="recent-post-image">
+                    <i class="fal fa-comment-alt-dots"></i>
+                  </a>
+                  <div class="recent-post-descr">
+                    <h6>
+                      <a href="#"><span>Tim Abell On</span> Five Places to visit in Oakland with Fantastic Ngrito </a>
+                    </h6>
+                  </div>
+                </div>
+              </div>
+              <!-- Tags Widget -->
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--blog-archive End-->
+  </div>
+  <!--to-top Start-->
+  <div id="section-to-top">
+    <div class="sigma_top">
+      <i class="far fa-arrow-up"></i>
+    </div>
+    <!--to-top End-->
+  </div>
+ {% endblock %}

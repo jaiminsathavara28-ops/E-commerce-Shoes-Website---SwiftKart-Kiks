@@ -1,0 +1,443 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} checkout {% endblock %}
+{% block content %}
+
+
+<style>
+    /* 🔥 Strong selector to override theme */
+    .form-group .email-input {
+        width: 100% !important;
+        height: 50px !important;
+        border-radius: 10px !important;
+
+        padding: 10px 45px 10px 15px !important;
+        font-size: 15px !important;
+        background: #fff !important;
+    }
+
+    /* Focus */
+    .form-group .email-input:focus {
+        border-color: #ff6b00 !important;
+
+    }
+
+    /* Readonly */
+    .form-group .email-input[readonly] {
+        background-color: #f3f3f3 !important;
+        cursor: not-allowed;
+    }
+</style>
+<div class="search-form-wrapper">
+    <div class="search-trigger sigma_close">
+        <span></span>
+        <span></span>
+    </div>
+    <form class="search-form" method="post">
+        <input type="text" placeholder="Search..." value="">
+        <button type="submit" class="search-btn">
+            <i class="fal fa-search m-0"></i>
+        </button>
+    </form>
+</div>
+<!--header End-->
+</div>
+<!--subheader Start-->
+<div id="section-subheader">
+    <div class="sigma_subheader style-9 bg-cover bg-center"
+         style="background-image: url({% static 'assets/img/checkout/1920x800.jpg' %})">
+        <div class="container">
+            <div class="sigma_subheader-inner">
+                <h1>Checkout</h1>
+            </div>
+        </div>
+    </div>
+    <!--subheader End-->
+</div>
+<!--preloader Start-->
+<div id="section-preloader">
+    <div class="sigma_preloader sigma_preloader-default">
+        <div class="sigma_preloader-inner">
+            <i></i><i></i><i></i><i></i>
+        </div>
+    </div>
+    <!--preloader End-->
+</div>
+<!--popup Start-->
+<div id="section-popup">
+    <div class="modal fade" id="sigma_popup-newsletter" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog sigma_newsletter-popup-modal style-4 modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body dark-overlay bg-cover bg-center"
+                     style="background-image: url({% static 'assets/img/checkout/1920x800.jpg' %})">
+                    <div class="sigma_close light newsletter-popup-trigger" data-dismiss="modal">
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="sigma_newsletter-popup-text-wrapper">
+                        <h3 class="text-white">Join Our Newsletter</h3>
+                        <p>Get the latest offers and exclusive deals, styles and competitions!</p>
+                    </div>
+                    <form method="post" class="text-center">
+
+                        <div class="form-group">
+                            <input type="email" placeholder="Email Address" class="form-control" name="newsletter-email"
+                                   value="">
+                        </div>
+                        <button type="submit" name="button">Subscribe</button>
+                        <span class="sigma_newsletter-popup-dismiss newsletter-popup-trigger" data-dismiss="modal">Don't show again</span>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--popup End-->
+</div>
+<!--checkout Start-->
+<div id="section-checkout">
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="sigma_form style-7">
+
+                        <form method="POST" action="{% url 'checkout' %}">
+                            {% csrf_token %}
+
+                            <div class="form-block">
+                                <!--                                <ul style="align-item:center; color:gray;">-->
+                                <!--                                <li class="menu-item">-->
+                                <!--                            <a href="/cart/">CART</a>-->
+                                <!--                                    <li class="menu-item">-->
+
+                                <!--                            <a href="/checkout/">kk</a>-->
+                                <!--                        </li>-->
+                                <!--                                    </ul>-->
+                                <h4>SHIPPING:</h4>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <i class="fal fa-user"></i>
+                                            <input type="text" name="name" placeholder="Your Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <i class="fal fa-at"></i>
+                                            <input type="email" class="email-input" name="email"
+                                                   value="{{ user_data.email }}" readonly>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <i class="fal fa-phone"></i>
+                                            <input type="text" name="phone" placeholder="Phone Number">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-block">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <select name="country" id="country">
+                                                <option value="1" selected>Select Country</option>
+
+
+                                                <option value="India">India</option>
+                                                <option value="United States">United States</option>
+                                                <option value="United Kingdom">United Kingdom</option>
+                                                <option value="Canada">Canada</option>
+                                                <option value="Australia">Australia</option>
+                                                <option value="Germany">Germany</option>
+                                                <option value="France">France</option>
+                                                <option value="UAE">UAE</option>
+                                                <option value="China">China</option>
+                                                <option value="Japan">Japan</option>
+
+                                            </select>
+                                        </div>
+                                        <!--                                    </div>-->
+                                        <!--                                    <div>-->
+
+                                        <div class="form-group">
+                                            <select name="state" id="state" class="form-control" required>
+                                                <option value="" selected>Select State</option>
+
+
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <i class="fal fa-map-marker-alt"></i>
+                                            <select name="city" id="city">
+                                                <option value="">Select City</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <input type="text" name="address" placeholder="Enter Address">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="form-block mb-0">
+
+
+                                <button type="submit" class="btn btn-dark w-100 mt-4 rounded-3">
+                                    Place Order
+                                </button>
+                            </div>
+
+
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="sidebar mt-5 mt-lg-0">
+                        <div class="widget widget-booking">
+                            <h5 class="widget-title">Order Summary</h5>
+
+                            <ul>
+                                {% for item in cart_items %}
+                                <li class="d-flex justify-content-between">
+                                    <span>{{ item.product.p_title }} (x{{ item.quantity }})</span>
+                                    <span>₹{{ item.product.p_price|floatformat:2 }}</span>
+                                </li>
+                                {% endfor %}
+                            </ul>
+
+                            <hr>
+
+                            <ul>
+                                <li class="d-flex justify-content-between">
+                                    <span>Subtotal</span>
+                                    <span>₹{{ subtotal }}</span>
+                                </li>
+
+                                <li class="d-flex justify-content-between">
+                                    <span>GST (18%)</span>
+                                    <span>₹{{ gst }}</span>
+                                </li>
+                            </ul>
+
+                            <hr>
+
+                            <ul>
+                                <li class="d-flex justify-content-between">
+                                    <span><b>Total</b></span>
+                                    <span><b>₹{{ grand_total }}</b></span>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--checkout End-->
+</div>
+<!--quickview End-->
+<!--to-top Start-->
+<div id="section-to-top">
+    <div class="sigma_top">
+        <i class="far fa-arrow-up"></i>
+    </div>
+    <!--to-top End-->
+</div>
+
+<!--<script src="https://checkout.razorpay.com/v1/checkout.js"></script>-->
+<!--<script>-->
+<!--    var options = {-->
+<!--    "key": "{{ razorpay_key }}",-->
+<!--    "amount": "{{ amount }}",-->
+<!--    "currency": "INR",-->
+<!--    "order_id": "{{ order_id }}",-->
+<!--    "handler": function (response){-->
+<!--        window.location.href = "/payment-success/?order_id=" + response.razorpay_order_id +-->
+<!--                               "&payment_id=" + response.razorpay_payment_id +-->
+<!--                               "&signature=" + response.razorpay_signature;-->
+<!--    }-->
+<!--};-->
+
+<!--var rzp1 = new Razorpay(options);-->
+<!--document.getElementById('rzp-button1').onclick = function(e){-->
+<!--    rzp1.open();-->
+<!--    e.preventDefault();-->
+<!--}-->
+<!--    document.addEventListener('DOMContentLoaded', function() {-->
+<!--        const paymentForm = document.getElementById('paymentForm');-->
+<!--        const errorsDiv = document.getElementById('errors');-->
+<!--        const totalAmount = {{ grand_total }} * 100; // Convert to paise-->
+
+<!--        paymentForm.addEventListener('submit', function(e ) {-->
+<!--            e.preventDefault(); // Prevent default form submission-->
+
+<!--            // Get selected payment method-->
+<!--            const selectedPaymentMethod = document.querySelector('input[name="payment_method"]:checked');-->
+
+<!--            if (!selectedPaymentMethod) {-->
+<!--                errorsDiv.textContent = "Please select a payment method.";-->
+<!--                return;-->
+<!--            }-->
+
+<!--            const paymentMethod = selectedPaymentMethod.value;-->
+
+<!--            if (paymentMethod === 'razorpay') {-->
+<!--                const options = {-->
+<!--                    key: "rzp_test_SKHW9WnwbTThRE", // Replace with your Razorpay key-->
+<!--                    amount: totalAmount, // Example amount, in paise-->
+<!--                    currency: "INR",-->
+<!--                    name: "swiftkart kiks",-->
+<!--                    description: "hii",-->
+<!--                    handler: function(response) {-->
+
+<!--     const paymentIdInput = document.createElement("input");-->
+<!--     paymentIdInput.type = "hidden";-->
+<!--     paymentIdInput.name = "razorpay_payment_id";-->
+<!--     paymentIdInput.value = response.razorpay_payment_id;-->
+
+<!--     const orderIdInput = document.createElement("input");-->
+<!--     orderIdInput.type = "hidden";-->
+<!--     orderIdInput.name = "razorpay_order_id";-->
+<!--     orderIdInput.value = response.razorpay_order_id;-->
+
+<!--     const signatureInput = document.createElement("input");-->
+<!--     signatureInput.type = "hidden";-->
+<!--     signatureInput.name = "razorpay_signature";-->
+<!--     signatureInput.value = response.razorpay_signature;-->
+
+<!--     paymentForm.appendChild(paymentIdInput);-->
+<!--     paymentForm.appendChild(orderIdInput);-->
+<!--     paymentForm.appendChild(signatureInput);-->
+
+<!--     paymentForm.submit();-->
+<!-- }-->
+<!--                        paymentForm.submit();-->
+<!--                    },-->
+<!--                    prefill: {-->
+<!--                        name: "{{ request.user.username }}",-->
+<!--                        email: "{{ request.user.email }}",-->
+<!--                        contact: "{{ request.user.profile.phone }}" // Use appropriate field-->
+<!--                    },-->
+<!--                    theme: {-->
+<!--                        color: "#3399cc"-->
+<!--                    }-->
+<!--                };-->
+<!--                const rzp = new Razorpay(options);-->
+<!--                rzp.open();-->
+<!--            } else {-->
+<!--                // Proceed with cash on delivery-->
+<!--                paymentForm.submit();-->
+<!--            }-->
+<!--        });-->
+<!--   });-->
+<!--</script>-->
+<script>
+    const data = {
+      "India": {
+          "Gujarat": ["Ahmedabad", "Surat", "Rajkot", "Vadodara"],
+          "Maharashtra": ["Mumbai", "Pune", "Nagpur", "Nashik"],
+          "Rajasthan": ["Jaipur", "Udaipur", "Jodhpur"],
+          "Karnataka": ["Bangalore", "Mysore", "Mangalore"],
+          "Tamil Nadu": ["Chennai", "Coimbatore", "Madurai"],
+          "Delhi": ["New Delhi"]
+      },
+
+      "United States": {
+          "California": ["Los Angeles", "San Diego", "San Francisco"],
+          "Texas": ["Houston", "Dallas", "Austin"],
+          "New York": ["New York City", "Buffalo"],
+          "Florida": ["Miami", "Orlando"]
+      },
+
+      "United Kingdom": {
+          "England": ["London", "Manchester", "Birmingham"],
+          "Scotland": ["Edinburgh", "Glasgow"],
+          "Wales": ["Cardiff", "Swansea"]
+      },
+
+      "Canada": {
+          "Ontario": ["Toronto", "Ottawa"],
+          "British Columbia": ["Vancouver", "Victoria"],
+          "Alberta": ["Calgary", "Edmonton"]
+      },
+
+      "Australia": {
+          "New South Wales": ["Sydney", "Newcastle"],
+          "Victoria": ["Melbourne", "Geelong"],
+          "Queensland": ["Brisbane", "Gold Coast"]
+      },
+
+      "Germany": {
+          "Bavaria": ["Munich", "Nuremberg"],
+          "Berlin": ["Berlin"],
+          "Hesse": ["Frankfurt", "Wiesbaden"]
+      },
+
+      "France": {
+          "Île-de-France": ["Paris"],
+          "Provence": ["Marseille", "Nice"],
+          "Auvergne": ["Lyon"]
+      },
+
+      "UAE": {
+          "Dubai": ["Dubai City"],
+          "Abu Dhabi": ["Abu Dhabi City"],
+          "Sharjah": ["Sharjah City"]
+      },
+
+      "China": {
+          "Beijing": ["Beijing"],
+          "Shanghai": ["Shanghai"],
+          "Guangdong": ["Guangzhou", "Shenzhen"]
+      },
+
+      "Japan": {
+          "Tokyo": ["Tokyo"],
+          "Osaka": ["Osaka"],
+          "Kyoto": ["Kyoto"]
+      }
+  };
+
+  const country = document.getElementById("country");
+  const state = document.getElementById("state");
+  const city = document.getElementById("city");
+
+  // When country changes
+  country.addEventListener("change", function () {
+      state.innerHTML = '<option value="">Select State</option>';
+      city.innerHTML = '<option value="">Select City</option>';
+
+      if (data[this.value]) {
+          Object.keys(data[this.value]).forEach(function (st) {
+              let option = `<option value="${st}">${st}</option>`;
+              state.innerHTML += option;
+          });
+      }
+  });
+
+  // When state changes
+  state.addEventListener("change", function () {
+      city.innerHTML = '<option value="">Select City</option>';
+
+      let selectedCountry = country.value;
+
+      if (data[selectedCountry][this.value]) {
+          data[selectedCountry][this.value].forEach(function (ct) {
+              let option = `<option value="${ct}">${ct}</option>`;
+              city.innerHTML += option;
+          });
+      }
+  });
+</script>
+{% endblock %}

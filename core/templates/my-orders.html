@@ -1,0 +1,251 @@
+{% extends "base.html" %}
+{% block title %}order{% endblock %}
+{% block content %}
+
+<style>
+    /* Background */
+  body {
+      background: linear-gradient(135deg, #eef2ff, #f8fafc);
+      font-family: 'Segoe UI', sans-serif;
+  }
+
+  /* Title */
+  .page-title {
+      font-weight: 700;
+      color: #0f172a;
+  }
+
+  /* Table Container */
+  .table-responsive {
+      border-radius: 16px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  }
+
+  /* Table */
+  .table {
+      margin: 0;
+  }
+
+  /* Header */
+  .table thead {
+      background: linear-gradient(135deg, #2563eb, #3b82f6);
+      color: white;
+  }
+
+  .table thead th {
+      border: none;
+      padding: 14px;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+  }
+
+  /* Rows */
+  .table tbody tr {
+      transition: all 0.25s ease;
+  }
+
+  .table tbody tr:hover {
+      background: #f1f5f9;
+      transform: scale(1.01);
+  }
+
+  /* Cells */
+  .table td {
+      padding: 14px;
+      font-size: 14px;
+      vertical-align: middle;
+  }
+
+  /* Product */
+  .product-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      object-fit: cover;
+      border: 1px solid #e2e8f0;
+      transition: 0.3s;
+  }
+
+  .product-img:hover {
+      transform: scale(1.1);
+  }
+
+  /* Price Highlight */
+  td:nth-child(8) {
+      font-weight: 600;
+      color: #2563eb;
+  }
+
+  /* Badge */
+  .badge {
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+  }
+
+  /* Paid */
+  .bg-success {
+      background: linear-gradient(135deg, #16a34a, #22c55e) !important;
+  }
+
+  /* Pending */
+  .bg-warning {
+      background: linear-gradient(135deg, #f59e0b, #fbbf24) !important;
+      color: #000;
+  }
+
+  /* Button */
+  .btn-success {
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 13px;
+      border: none;
+      background: linear-gradient(135deg, #16a34a, #22c55e);
+      transition: 0.3s;
+  }
+
+  .btn-success:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  }
+
+  /* 🔥 MOBILE RESPONSIVE (Important) */
+  @media (max-width: 768px) {
+
+      .table thead {
+          display: none;
+      }
+
+      .table,
+      .table tbody,
+      .table tr,
+      .table td {
+          display: block;
+          width: 100%;
+      }
+
+      .table tr {
+          background: white;
+          margin-bottom: 15px;
+          border-radius: 12px;
+          box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+          padding: 10px;
+      }
+
+      .table td {
+          text-align: right;
+          padding: 10px;
+          position: relative;
+          border: none;
+          border-bottom: 1px solid #f1f5f9;
+      }
+
+      .table td::before {
+          content: attr(data-label);
+          position: absolute;
+          left: 10px;
+          font-weight: 600;
+          color: #64748b;
+          text-align: left;
+      }
+
+      .product-img {
+          width: 40px;
+          height: 40px;
+      }
+  }
+
+</style>
+
+
+<div class="container mt-5 mb-5">
+
+    <h2 class="page-title mb-4">🛍 My Orders</h2>
+
+    {% if orders %}
+
+    <div class="table-responsive">
+
+        <table class="table table-hover align-middle shadow-sm bg-white rounded">
+
+            <thead class="table-dark">
+            <tr>
+                <th>Order ID</th>
+                <th>Date</th>
+                <th>Product</th>
+                <th>Size</th>
+                <th>Color</th>
+                <th>Qty</th>
+                <th>Price</th>
+                <th>Total</th>
+                <th>Status</th>
+                <th>Invoice</th>
+            </tr>
+            </thead>
+
+            <tbody>
+
+            {% for order in orders %}
+            {% for item in order.items.all %}
+            <tr>
+                <td data-label="Order ID">{{ order.order_id }}</td>
+                <td data-label="Date">{{ order.created_at|date:"d M Y" }}</td>
+
+                <td data-label="Product" class="d-flex align-items-center">
+                    {% if item.product.image %}
+                    <img src="{{ item.product.image.url }}" class="product-img me-2">
+                    {% endif %}
+                    {{ item.product.p_title }}
+                </td>
+
+                <td data-label="Size">{{ item.size }}</td>
+
+                <td data-label="Color">
+                    {% if item.color %}
+                    {{ item.color }}
+                    {% else %}
+                    -
+                    {% endif %}
+                </td>
+
+                <td data-label="Qty">{{ item.quantity }}</td>
+                <td data-label="Price">₹{{ item.price }}</td>
+                <td data-label="Total">₹{{ order.amount }}</td>
+
+                <td data-label="Status">
+                    {% if order.paid %}
+                    <span class="badge bg-success">Paid</span>
+                    {% else %}
+                    <span class="badge bg-warning">Pending</span>
+                    {% endif %}
+                </td>
+
+                <td data-label="Invoice">
+                    <a href="{% url 'download_invoice' order.order_id %}" class="btn btn-success btn-sm">
+                        Download
+                    </a>
+                </td>
+
+            </tr>
+            {% endfor %}
+            {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    {% else %}
+
+    <div class="alert alert-info text-center p-4">
+        😕 You have not placed any orders yet.
+    </div>
+
+    {% endif %}
+
+</div>
+{% endblock %}

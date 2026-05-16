@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} contact-us {% endblock %}
+{% block content %}
+    <div class="search-form-wrapper">
+      <div class="search-trigger sigma_close">
+        <span></span>
+        <span></span>
+      </div>
+      <form class="search-form" method="post">
+        <input type="text" placeholder="Search..." value="">
+        <button type="submit" class="search-btn">
+          <i class="fal fa-search m-0"></i>
+        </button>
+      </form>
+    </div>
+    <!--header End-->
+  </div>
+  <!--subheader Start-->
+  <div id="section-subheader">
+    <div class="sigma_subheader style-9 bg-cover bg-center" style="background-image: url({% static 'assets/img/contact-us/1920x800.jpg' %})">
+      <div class="container">
+        <div class="sigma_subheader-inner">
+          <h1>Contact Us</h1>
+        </div>
+      </div>
+    </div>
+    <!--subheader End-->
+  </div>
+  <!--preloader Start-->
+  <div id="section-preloader">
+    <div class="sigma_preloader sigma_preloader-default">
+      <div class="sigma_preloader-inner">
+        <i></i><i></i><i></i><i></i>
+      </div>
+    </div>
+    <!--preloader End-->
+  </div>
+  <!--popup Start-->
+  <div id="section-popup">
+    <div class="modal fade" id="sigma_popup-newsletter" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog sigma_newsletter-popup-modal style-4 modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body dark-overlay bg-cover bg-center" style="background-image: url({% static 'assets/img/contact-us/1920x800.jpg' %}">
+            <div class="sigma_close light newsletter-popup-trigger" data-dismiss="modal">
+              <span></span>
+              <span></span>
+            </div>
+            <div class="sigma_newsletter-popup-text-wrapper">
+              <h3 class="text-white">Join Our Newsletter</h3>
+              <p>Get the latest offers and exclusive deals, styles and competitions!</p>
+            </div>
+            <form method="post" class="text-center">
+              <div class="form-group">
+                <input type="email" placeholder="Email Address" class="form-control" name="newsletter-email" value="">
+              </div>
+              <button type="submit" name="button">Subscribe</button>
+              <span class="sigma_newsletter-popup-dismiss newsletter-popup-trigger" data-dismiss="modal">Don't show again</span>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--popup End-->
+  </div>
+  <!--contact-form Start-->
+  <div id="section-contact-form">
+
+    <div class="section">
+      <div class="container">
+        <div class="section-title centered">
+          <h3 class="title">Contact Us</h3>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text Lorem Ipsum is simply</p>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <form class="mf_form_validate ajax_submit"  method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label>First Name</label>
+                    <input type="text" name="name" placeholder="First Name" required>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="text" name="lname" placeholder="Last Name" required>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group">
+                    <label>Email <i class="required">*</i>
+                    </label>
+                    <input type="email" name="email" placeholder="Email" required>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group">
+                    <label>Message <i class="required">*</i>
+                    </label>
+                    <textarea name="message" rows="5" placeholder="Message" required></textarea>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn-block">Submit</button>
+                  <div class="server_response w-100">
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--contact-form End-->
+  </div>
+  <!--to-top Start-->
+  <div id="section-to-top">
+    <div class="sigma_top">
+      <i class="far fa-arrow-up"></i>
+    </div>
+    <!--to-top End-->
+  </div>
+ {% endblock %}

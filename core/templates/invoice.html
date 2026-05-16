@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container mt-5 mb-5">
+    <div class="card shadow-lg border-0">
+        <div class="card-body p-5">
+
+            <!-- Store Header -->
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="fw-bold"> Store</h3>
+                    <p class="text-muted mb-0">
+                        Ahmedabad, Gujarat <br>
+                        support@shoestore.com
+                    </p>
+                </div>
+
+                <div class="col-md-6 text-md-end">
+                    <h4 class="fw-bold">Invoice</h4>
+                    <p class="mb-0">
+                        <strong>Order ID:</strong> {{ order.order_id }} <br>
+                        <strong>Date:</strong> {{ order.created_at|date:"d M Y" }}
+                    </p>
+                </div>
+            </div>
+
+            <hr class="my-4">
+
+            <!-- Payment Info -->
+            <div class="row">
+                <div class="col-md-6">
+                    <p><strong>Payment ID:</strong> {{ order.razorpay_payment_id }}</p>
+                </div>
+
+                <div class="col-md-6 text-md-end">
+                    <p>
+                        <strong>Status:</strong>
+                        {% if order.paid %}
+                        <span class="badge bg-success">Paid</span>
+                        {% else %}
+                        <span class="badge bg-danger">Pending</span>
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- Product Table -->
+            <h5 class="mb-3">Products</h5>
+
+            <div class="table-responsive">
+                <table class="table table-bordered align-middle">
+                    <thead class="table-dark">
+                    <tr>
+                        <th>Product</th>
+                        <th>Size</th>
+                        <th width="120">Qty</th>
+                        <th width="150">Price</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    {% for item in order.items.all %}
+                    <tr>
+
+                        <td>
+                            {% if item.product %}
+                            {{ item.product.p_title }}
+                            {% else %}
+                            <span class="text-danger">Product Removed</span>
+                            {% endif %}
+                        </td>
+                        <td>{{ item.size }}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>{{ item.color}}</td>
+                        <td>₹{{ item.price }}</td>
+
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="3" class="text-center text-muted">
+                            No products found
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Total -->
+            <div class="text-end mt-4">
+                <h4 class="fw-bold">
+                    Total Amount: <span class="text-success">&#8377;{{ order.amount }}</span>
+                </h4>
+            </div>
+
+            <hr class="my-4">
+
+            <!-- Footer -->
+            <div class="text-center text-muted">
+                <p class="mb-1">Thank you for shopping with <strong>SwiftKart Kiks</strong>!</p>
+                <small>Visit again 😊</small>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

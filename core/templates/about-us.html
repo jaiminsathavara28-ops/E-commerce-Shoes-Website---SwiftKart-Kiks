@@ -1,0 +1,401 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} about-us {% endblock %}
+{% block content %}
+    <div class="search-form-wrapper">
+      <div class="search-trigger sigma_close">
+        <span></span>
+        <span></span>
+      </div>
+      <form class="search-form" method="post">
+        <input type="text" placeholder="Search..." value="">
+        <button type="submit" class="search-btn">
+          <i class="fal fa-search m-0"></i>
+        </button>
+      </form>
+    </div>
+    <!--header End-->
+  </div>
+  <!--subheader Start-->
+  <div id="section-subheader">
+    <div class="sigma_subheader style-9 bg-cover bg-center" style=" background-image: url({% static 'assets/img/about-us/1920x800.jpg' %})">
+      <div class="container">
+        <div class="sigma_subheader-inner">
+          <h1>About Us</h1>
+        </div>
+      </div>
+    </div>
+    <!--subheader End-->
+  </div>
+  <!--preloader Start-->
+  <div id="section-preloader">
+    <div class="sigma_preloader sigma_preloader-default">
+      <div class="sigma_preloader-inner">
+        <i></i><i></i><i></i><i></i>
+      </div>
+    </div>
+    <!--preloader End-->
+  </div>
+  <!--popup Start-->
+  <div id="section-popup">
+    <div class="modal fade" id="sigma_popup-newsletter" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog sigma_newsletter-popup-modal style-4 modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body dark-overlay bg-cover bg-center" style="background-image: url({% static 'assets/img/about-us/600x428.jpg' %})">
+            <div class="sigma_close light newsletter-popup-trigger" data-dismiss="modal">
+              <span></span>
+              <span></span>
+            </div>
+            <div class="sigma_newsletter-popup-text-wrapper">
+              <h3 class="text-white">Join Our Newsletter</h3>
+              <p>Get the latest offers and exclusive deals, styles and competitions!</p>
+            </div>
+            <form method="post" class="text-center">
+              <div class="form-group">
+                <input type="email" placeholder="Email Address" class="form-control" name="newsletter-email" value="">
+              </div>
+              <button type="submit" name="button">Subscribe</button>
+              <span class="sigma_newsletter-popup-dismiss newsletter-popup-trigger" data-dismiss="modal">Don't show again</span>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--popup End-->
+  </div>
+  <!--about Start-->
+  <div id="section-about">
+    <div class="section sigma_about-sec style-15">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="sigma_about style-15 w-100 h-100">
+              <div class="sigma_about-image-1">
+                <img src="{% static 'assets/img/about-us/540x530.jpg' %}" alt="img">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="sigma_about style-15 mt-5 mt-lg-0 pl-0 pl-lg-3">
+              <div class="section-title mb-5">
+                <span class="subtitle">Features</span>
+                <h3 class="title">Why Choose Us</h3>
+              </div>
+              <div class="sigma_about-content">
+                <div class="sigma_info style-15">
+                  <div class="sigma_info-title align-items-center">
+                    <span class="sigma_info-icon">
+                      <i class="flaticon-guarantee is_flaticon"></i>
+                    </span>
+                  </div>
+                  <div class="sigma_info-description">
+                    <h5>
+                      <span>Trusted</span> Store</h5>
+                    <p>More than one thousand people trusted on our store.</p>
+                  </div>
+                </div>
+                <div class="sigma_info style-15">
+                  <div class="sigma_info-title align-items-center">
+                    <span class="sigma_info-icon">
+                      <i class="flaticon-delivery-truck is_flaticon"></i>
+                    </span>
+                  </div>
+                  <div class="sigma_info-description">
+                    <h5>
+                      <span>Free</span> Delievery</h5>
+                    <p>We deliver our products free door to door 24x7=360.</p>
+                  </div>
+                </div>
+                <div class="sigma_info style-15">
+                  <div class="sigma_info-title align-items-center">
+                    <span class="sigma_info-icon">
+                      <i class="flaticon-secure-payment is_flaticon"></i>
+                    </span>
+                  </div>
+                  <div class="sigma_info-description">
+                    <h5>
+                      <span>Secure</span> Payment</h5>
+                    <p>Our payment system is secured from hacking.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--about End-->
+  </div>
+  <!--counter Start-->
+  <div id="section-counter">
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="sigma_about style-6 mb-5 mb-lg-0">
+              <div class="section-title">
+                <h3 class="title">Our Mission</h3>
+              </div>
+              <p>
+                Whether you're in with <b>the football fandom</b> or one of the style crowd, the Handball Special is a bold choice for your rotation. Steeped in heritage <b>the classic</b> sneaker boasts a pale blue suede upper with gold foil detailing and a soft sole.
+              </p>
+              <div class="sigma_general-list style-2 mt-4 mb-0">
+                <ul>
+                  <li>
+                    <i class="far fa-check"></i>
+                    <span>Stylish Shoes and Boots</span>
+                  </li>
+                  <li>
+                    <i class="far fa-check"></i>
+                    <span>Sport and Athlete Shoes</span>
+                  </li>
+                  <li>
+                    <i class="far fa-check"></i>
+                    <span>Action Shoes and Sandals</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="row no-gutters">
+              <div class="col-lg-4 col-sm-3">
+                <div class="sigma_counter text-center style-2 border-0">
+                  <i class="flaticon-sneakers-1 is_flaticon text-white"></i>
+                  <span class="justify-content-center">
+                    <b class="counter text-white" data-from="0" data-to="3000">3000</b>
+                    <span class="plus text-white">+</span>
+                  </span>
+                  <p class="text-white mb-0">Products</p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-sm-3">
+                <div class="sigma_counter text-center style-2">
+                  <i class="flaticon-rating is_flaticon text-white"></i>
+                  <span class="justify-content-center">
+                    <b class="counter text-white" data-from="0" data-to="2500">2500</b>
+                    <span class="plus text-white">+</span>
+                  </span>
+                  <p class="text-white mb-0">Feedbacks</p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-sm-3">
+                <div class="sigma_counter text-center style-2">
+                  <i class="flaticon-award-1 is_flaticon text-white"></i>
+                  <span class="justify-content-center">
+                    <b class="counter text-white" data-from="0" data-to="1000">1000</b>
+                    <span class="plus text-white">+</span>
+                  </span>
+                  <p class="text-white mb-0">Awards</p>
+                </div>
+              </div>
+            </div>
+            <p class="mt-3 mb-0">
+              Whether you're in with <b>the football fandom</b> or one of the style crowd, the Handball Special is a bold choice for your rotation. Steeped in heritage <b>the classic</b> sneaker boasts a pale blue suede upper with gold foil detailing and a soft sole. pureley functional need for a controlls environment to moderate the effects of climate. It is a long established fact that a reader
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--counter End-->
+  </div>
+  <!--team Start-->
+  <div id="section-team">
+    <div class="section pt-0">
+      <div class="container">
+        <div class="section-title flex-title">
+          <div class="section-title-heading">
+            <span class="subtitle">Meet Our Team</span>
+            <h3 class="title mb-0">Our Creative Team</h3>
+          </div>
+          <div class="sigma_custom-arrows mt-4 mt-sm-0">
+            <i class="fal fa chevron-left slick-prev"></i>
+            <i class="fal fa chevron-right slick-next"></i> 
+          </div>
+        </div>
+        <div class="sigma_team-slider">
+          <div class="sigma_team style-11">
+            <div class="sigma_team-thumb">
+              <img src="{% static 'assets/img/about-us/253x253.jpg' %}" alt="team">
+            </div>
+            <div class="sigma_team-body">
+              <h5>
+                    <a href="#">Lina Smith</a>
+                  </h5>
+              <div class="sigma_team-categories">
+                <a href="#" class="sigma_team-category">Manager</a>
+              </div>
+            </div>
+          </div>
+          <div class="sigma_team style-11">
+            <div class="sigma_team-thumb">
+              <img src="{% static 'assets/img/about-us/253x253-0.jpg' %}" alt="team">
+            </div>
+            <div class="sigma_team-body">
+              <h5>
+                    <a href="#">LM Smith</a>
+                  </h5>
+              <div class="sigma_team-categories">
+                <a href="#" class="sigma_team-category">Designer</a>
+              </div>
+            </div>
+          </div>
+          <div class="sigma_team style-11">
+            <div class="sigma_team-thumb">
+              <img src="{% static 'assets/img/about-us/253x253-1.jpg' %}" alt="team">
+            </div>
+            <div class="sigma_team-body">
+              <h5>
+                    <a href="#">Isabella</a>
+                  </h5>
+              <div class="sigma_team-categories">
+                <a href="#" class="sigma_team-category">Founder</a>
+              </div>
+            </div>
+          </div>
+          <div class="sigma_team style-11">
+            <div class="sigma_team-thumb">
+              <img src="{% static 'assets/img/about-us/253x253-2.jpg' %}" alt="team">
+            </div>
+            <div class="sigma_team-body">
+              <h5>
+                    <a href="#">John Deer</a>
+                  </h5>
+              <div class="sigma_team-categories">
+                <a href="#" class="sigma_team-category">Salesman</a>
+              </div>
+            </div>
+          </div>
+          <div class="sigma_team style-11">
+            <div class="sigma_team-thumb">
+              <img src="{% static 'assets/img/about-us/253x253-3.jpg' %}" alt="team">
+            </div>
+            <div class="sigma_team-body">
+              <h5>
+                    <a href="#">Maria Henry</a>
+                  </h5>
+              <div class="sigma_team-categories">
+                <a href="#" class="sigma_team-category">Sales Manager</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--team End-->
+  </div>
+  <!--blog Start-->
+  <div id="section-blog">
+    <div class="section section-padding pt-0">
+      <div class="container">
+        <div class="section-title centered">
+          <h3 class="title">Our Blog</h3>
+          <p>Read our blogs and know more about products quality, tips to know leather quality and many more.</p>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <article class="sigma_post style-6">
+              <div class="sigma_post-thumb">
+                <a href="/blog-details/">
+                  <img src="{% static 'assets/img/about-us/350x200.jpg' %}" alt="img">
+                </a>
+              </div>
+              <div class="sigma_post-body">
+                <div class="sigma_post-meta">
+                  <ul>
+                    <li>By : <a href="#" class="ml-2">Admin</a>
+                    </li>
+                    <li>
+                      <a href="/blog-details/">14 Jul 2024</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="sigma_post-content">
+                  <h5>
+                    <a href="/blog-details/">Tips for Best Shoes Quality</a>
+                  </h5>
+                  <p class="m-0">Button details at the toe and a subtle ripple of the fabric make the Blowfish Vegan really pop.
+                  </p>
+                  <a href="/blog-details/" class="btn-link">
+                    Read more
+                    <i class="far fa-angle-right"></i>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <article class="sigma_post style-6">
+              <div class="sigma_post-thumb">
+                <a href="/blog-details/">
+                  <img src="{% static 'assets/img/about-us/350x200-0.jpg' %}" alt="img">
+                </a>
+              </div>
+              <div class="sigma_post-body">
+                <div class="sigma_post-meta">
+                  <ul>
+                    <li>By : <a href="#" class="ml-2">Admin</a>
+                    </li>
+                    <li>
+                      <a href="/blog-details/">19 Jan 2024</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="sigma_post-content">
+                  <h5>
+                    <a href="/blog-details/">Know More About Sandals</a>
+                  </h5>
+                  <p class="m-0">Hit the beach, shops or your favourite sunny spot with BIRKENSTOCK. The Gizeh is a thong style
+                  </p>
+                  <a href="/blog-details/" class="btn-link">
+                    Read more
+                    <i class="far fa-angle-right"></i>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <article class="sigma_post style-6">
+              <div class="sigma_post-thumb">
+                <a href="/blog-details/">
+                  <img src="{% static 'assets/img/about-us/350x200-1.jpg' %}" alt="img">
+                </a>
+              </div>
+              <div class="sigma_post-body">
+                <div class="sigma_post-meta">
+                  <ul>
+                    <li>By : <a href="#" class="ml-2">Admin</a>
+                    </li>
+                    <li>
+                      <a href="/blog-details/">18 Apr 2024</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="sigma_post-content">
+                  <h5>
+                    <a href="/blog-details/">More About Men Shoes Quality</a>
+                  </h5>
+                  <p class="m-0">anding in all black, perfect for back to school styling, the Tovni Lacer Mono from Kickers
+                  </p>
+                  <a href="/blog-details/" class="btn-link">
+                    Read more
+                    <i class="far fa-angle-right"></i>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--blog End-->
+  </div>
+  <!--to-top Start-->
+  <div id="section-to-top">
+    <div class="sigma_top">
+      <i class="far fa-arrow-up"></i>
+    </div>
+    <!--to-top End-->
+  </div>
+{% endblock %}

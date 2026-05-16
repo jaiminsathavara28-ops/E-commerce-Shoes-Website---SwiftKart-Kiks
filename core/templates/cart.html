@@ -1,0 +1,301 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} cart {% endblock %}
+{% block content %}
+
+
+<!--subheader Start-->
+<div id="section-subheader">
+    <div class="sigma_subheader style-9 bg-cover bg-center"
+         style="background-image: url({% static 'assets/img/cart/1920x800.jpg' %})">
+        <div class="container">
+            <div class="sigma_subheader-inner">
+                <h1>Cart</h1>
+            </div>
+        </div>
+    </div>
+    <!--subheader End-->
+</div>
+<!--preloader Start-->
+<div id="section-preloader">
+    <div class="sigma_preloader sigma_preloader-default">
+        <div class="sigma_preloader-inner">
+            <i></i><i></i><i></i><i></i>
+        </div>
+    </div>
+    <!--preloader End-->
+</div>
+<!--popup Start-->
+<div id="section-popup">
+    <div class="modal fade" id="sigma_popup-newsletter" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog sigma_newsletter-popup-modal style-4 modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body dark-overlay bg-cover bg-center"
+                     style="background-image: url({% static 'assets/img/cart/1920x800.jpg' %})">
+                    <div class="sigma_close light newsletter-popup-trigger" data-dismiss="modal">
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="sigma_newsletter-popup-text-wrapper">
+                        <h3 class="text-white">Join Our Newsletter</h3>
+                        <p>Get the latest offers and exclusive deals, styles and competitions!</p>
+                    </div>
+                    <form method="post" class="text-center">
+                        <div class="form-group">
+                            <input type="email" placeholder="Email Address" class="form-control" name="newsletter-email"
+                                   value="">
+                        </div>
+                        <button type="submit" name="button">Subscribe</button>
+                        <span class="sigma_newsletter-popup-dismiss newsletter-popup-trigger" data-dismiss="modal">Don't show again</span>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--popup End-->
+</div>
+<!--cart Start-->
+<div id="section-cart">
+    <div class="section">
+        <div class="container">
+            <!-- Cart Table Start -->
+            <table class="sigma_responsive-table">
+                <thead>
+                <tr>
+                    <th class="remove-item">
+                    </th>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Qunantity</th>
+                    <th>Total</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for item in cart_items %}
+                <tr>
+                    <td class="remove">
+                        <a href="{% url 'remove_from_cart' item.id %}" class="sigma_close">
+                            <span></span>
+                            <span></span>
+                        </a>
+                    </td>
+
+                    <td data-title="Product">
+                        <div class="sigma_cart-product-wrapper">
+                            {% if item.color_image %}
+    <img src="{{ item.color_image }}">
+{% else %}
+    <img src="{{ item.product.product_image.url }}">
+{% endif %}
+<!--                            <img src="{{ item.color_image }}"-->
+<!--                                 style="width:100px; height:auto; object-fit:contain;">-->
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <div class="sigma_cart-product-body">
+                                <h6>
+                                    <a href="{% url 'product_details' item.product.id item.product.slug %}">
+
+                                        {{ item.product.p_title }}
+                                        Size: {{ item.size }}&nbsp;
+                                        Color: {{ item.color }}
+                                    </a>
+                                </h6>
+                                <p>{{ item.quantity }} Pieces</p>
+                            </div>
+                        </div>
+                    </td>
+
+                    <td data-title="Price">
+                       <strong>₹{{ item.product.p_price }}</strong>
+
+                    </td>
+
+                    <td class="quantity" data-title="Quantity">
+    <div style="display:flex; align-items:center; gap:10px;">
+
+       <button type="button"
+        class="qty-btn btn btn-sm btn-outline-dark"
+        data-id="{{ item.id }}"
+        data-action="decrease">−</button>
+
+     <span id="qty-{{ item.id }}"
+      style="
+            display:inline-block;
+            width:60px;
+            text-align:center;
+            font-size:18px;
+            font-weight:600;
+            color:black;
+      ">
+    {{ item.quantity }}
+</span>
+
+
+
+       <button type="button"
+        class="qty-btn btn btn-sm btn-outline-dark"
+        data-id="{{ item.id }}"
+        data-action="increase">+</button>
+
+
+    </div>
+</td>
+
+
+                    <td data-title="Total">
+                        <strong id="item-total-{{ item.id }}">
+    ₹{{ item.total }}
+</strong>
+
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5" style="text-align:center;">
+                        Your cart is empty.
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+
+            </table>
+            <!-- Cart Table End -->
+            <!-- Coupon + Cart Summary Start -->
+            <div class="row mt-4 align-items-stretch">
+
+                <!-- Coupon Code -->
+
+
+
+                <!-- Cart Summary -->
+                <div class="col-lg-6 col-md-12 mb-3">
+                    <div class="card shadow-sm p-4 h-100">
+
+                        <h5 class="mb-3">Cart Summary</h5>
+
+                        <div class="d-flex justify-content-between mb-3">
+                            <h5>Subtotal: ₹{{ total }}</h5>
+                            <h5>GST (18%): ₹{{ gst }}</h5>
+<!--                            <h4><strong>Grand Total: ₹{{ grand_total }}</strong></h4>-->
+
+                            <span>Grand Total (GST Included)</span>
+                            <strong class="text-danger" id="grand-total">
+    ₹{{ grand_total }}
+</strong>
+
+                        </div>
+
+                        <a href="{% url 'checkout' %}"
+                           class="btn btn-danger btn-block"
+                           style="padding:12px; font-weight:600;">
+                            CHECKOUT
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- Coupon + Cart Summary End -->
+
+        </div>
+    </div>
+    <!--cart End-->
+</div>
+<!--  &lt;!&ndash;quickview Start&ndash;&gt;-->
+<!--  <div id="section-quickview">-->
+<!--    <div class="modal fade sigma_quick-view-modal" id="quickViewModal" role="dialog" aria-hidden="true">-->
+<!--      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">-->
+<!--        <div class="modal-content">-->
+<!--          <div class="modal-body">-->
+<!--            <div class="sigma_close" data-dismiss="modal">-->
+<!--              <span></span>-->
+<!--              <span></span>-->
+<!--            </div>-->
+<!--            <div class="row sigma_product-single">-->
+<!--              <div class="col-md-6">-->
+<!--                <div class="sigma_product-single-thumb">-->
+<!--                  <img src="{% static 'assets/img/cart/600.jpg' %}" alt="product">-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="col-md-6">-->
+<!--                <div class="sigma_product-single-content">-->
+<!--                  <div class="sigma_product-price">-->
+<!--                    <span>352$</span>-->
+<!--                    <span>245$</span>-->
+<!--                  </div>-->
+<!--                  <div class="sigma_rating-wrapper">-->
+<!--                    <div class="sigma_rating">-->
+<!--                      <i class="fas fa-star active"></i>-->
+<!--                      <i class="fas fa-star active"></i>-->
+<!--                      <i class="fas fa-star active"></i>-->
+<!--                      <i class="fas fa-star active"></i>-->
+<!--                      <i class="fas fa-star"></i>-->
+<!--                    </div>-->
+<!--                    <span>255 Reviews</span>-->
+<!--                  </div>-->
+<!--                  <hr>-->
+<!--                  <p class="sigma_product-excerpt">-->
+<!--                    The Nike Air Max Bolt moves in a white and black man-made upper with mesh inserts to keep things breezy. This ultra-cushioned design makes running or working-out real comfortable - we approve.,-->
+<!--                  </p>-->
+<!--                  <div class="sigma_product-meta">-->
+<!--                    <p><strong>Product SKU: <span>#3382dk</span></strong>-->
+<!--                    </p>-->
+<!--                    <p><strong>Availablity: <span>In Stock</span></strong>-->
+<!--                    </p>-->
+<!--                    <p><strong>Tags: </strong>  <a href="#">Fashion</a>, <a href="#">Classic</a> -->
+<!--                    </p>-->
+<!--                  </div>-->
+<!--                  <hr>-->
+<!--                  <form class="sigma_product-atc-form">-->
+<!--                    <div class="sigma_product-buttons d-block">-->
+<!--                      <a href="/product-details/" class="ml-0 btn-block sigma_btn">Buy Now <i class="far fa-shopping-basket"></i> </a>-->
+<!--                      <a href="/product-details/" class="ml-0 btn-block sigma_btn light">Wishlist <i class="far fa-heart"></i> </a>-->
+<!--                      <a href="/product-details/" class="ml-0 btn-block sigma_btn light">Compare <i class="far fa-compress"></i> </a>-->
+<!--                    </div>-->
+<!--                  </form>-->
+<!--                  &lt;!&ndash; Post Meta Start &ndash;&gt;-->
+<!--                  <div class="sigma_post-single-meta">-->
+<!--                    <div class="sigma_post-single-meta-item sigma_post-share">-->
+<!--                      <h5>Share</h5>-->
+<!--                      <ul class="sigma_sm">-->
+<!--                        <li>-->
+<!--                          <a href="#">-->
+<!--                            <i class="fab fa-facebook-f"></i>-->
+<!--                          </a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                          <a href="#">-->
+<!--                            <i class="fab fa-linkedin-in"></i>-->
+<!--                          </a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                          <a href="#">-->
+<!--                            <i class="fab fa-twitter"></i>-->
+<!--                          </a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                          <a href="#">-->
+<!--                            <i class="fab fa-youtube"></i>-->
+<!--                          </a>-->
+<!--                        </li>-->
+<!--                      </ul>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                  &lt;!&ndash; Post Meta End &ndash;&gt;-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash;quickview End&ndash;&gt;-->
+</div>
+<!--to-top Start-->
+<div id="section-to-top">
+    <div class="sigma_top">
+        <i class="far fa-arrow-up"></i>
+    </div>
+    <!--to-top End-->
+</div>
+
+{% endblock %}

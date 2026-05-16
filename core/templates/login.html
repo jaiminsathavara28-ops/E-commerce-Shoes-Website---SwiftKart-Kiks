@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} login {% endblock %}
+{% block content %}
+    <div class="search-form-wrapper">
+      <div class="search-trigger sigma_close">
+        <span></span>
+        <span></span>
+      </div>
+      <form class="search-form" method="post">
+        <input type="text" placeholder="Search..." value="">
+        <button type="submit" class="search-btn">
+          <i class="fal fa-search m-0"></i>
+        </button>
+      </form>
+    </div>
+    <!--header End-->
+  </div>
+  <!--subheader Start-->
+  <div id="section-subheader">
+    <div class="sigma_subheader style-9 bg-cover bg-center" style="background-image: url({% static 'assets/img/login/1920x800.jpg' %})">
+      <div class="container">
+        <div class="sigma_subheader-inner">
+          <h1>Login</h1>
+        </div>
+      </div>
+    </div>
+    <!--subheader End-->
+  </div>
+  <!--preloader Start-->
+  <div id="section-preloader">
+    <div class="sigma_preloader sigma_preloader-default">
+      <div class="sigma_preloader-inner">
+        <i></i><i></i><i></i><i></i>
+      </div>
+    </div>
+    <!--preloader End-->
+  </div>
+  <!--popup Start-->
+  <div id="section-popup">
+    <div class="modal fade" id="sigma_popup-newsletter" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog sigma_newsletter-popup-modal style-4 modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body dark-overlay bg-cover bg-center" style="background-image: url({% static 'assets/img/login/600x428.jpg' %})">
+            <div class="sigma_close light newsletter-popup-trigger" data-dismiss="modal">
+              <span></span>
+              <span></span>
+            </div>
+            <div class="sigma_newsletter-popup-text-wrapper">
+              <h3 class="text-white">Join Our Newsletter</h3>
+              <p>Get the latest offers and exclusive deals, styles and competitions!</p>
+            </div>
+            <form method="post" class="text-center">
+              <div class="form-group">
+                <input type="email" placeholder="Email Address" class="form-control" name="newsletter-email" value="">
+              </div>
+              <button type="submit" name="button">Subscribe</button>
+              <span class="sigma_newsletter-popup-dismiss newsletter-popup-trigger" data-dismiss="modal">Don't show again</span>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--popup End-->
+  </div>
+  <!--login Start-->
+  <div id="section-login">
+    <div class="container-fluid p-0">
+      <div class="row no-gutters align-items-center">
+        <div class="col-lg-6">
+          <div class="section">
+            <div class="sigma_form style-3">
+              <div class="section-title">
+                <h3 class="title">Sign <span class="primary-color">in</span>
+                </h3>
+               </div>
+
+              <form action="/login/" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                  <p class="mb-0">Need a New Account? <a href="/signup/">Create an account</a>
+                  </p>
+                </div>
+                <label>Username</label>
+                <div class="form-group">
+                  <input type="text" id="username" name="username" placeholder="Username" required>
+                </div>
+                <label>Password</label>
+                <div class="form-group">
+                  <i class="fal fa-eye password-toggle show-password"></i>
+                  <input type="password" id="pass1" name="password" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                  <button type="submit" class="btn-block">Log in</button>
+                </div>
+                <div class="form-group">
+                  <div class="d-flex align-items-center justify-content-center">
+                    <input type="checkbox" id="checkbox" name="checkbox">
+                    <label class="mb-0" for="checkbox">Keep me Logged in</label>
+                  </div>
+                </div>
+                <div class="sigma_form-info">
+                  <a href="#">Forgot Username?</a>
+                  <a href="#">Forgot Password?</a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 d-none d-lg-block">
+          <div class="sigma_form-image">
+            <img src="{% static 'assets/img/login/1920.jpg' %}" alt="img">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--login End-->
+  </div>
+  <!--to-top Start-->
+  <div id="section-to-top">
+    <div class="sigma_top">
+      <i class="far fa-arrow-up"></i>
+    </div>
+    <!--to-top End-->
+  </div>
+ {% endblock %}
