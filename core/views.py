@@ -425,7 +425,7 @@ def payment(request):
     amount = int(float(grand_total) * 100)
 
     payment = client.order.create({
-        "amount": "amount",
+        "amount": amount,
         "currency": "INR",
         "payment_capture": "1"
     })
